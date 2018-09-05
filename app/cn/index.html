@@ -78,7 +78,7 @@
             </p>
             <div class="video-box">
                 <div class="cover-box" v-show="!playShow"><img src="../images/home/play.png" @click="videoPlay"></div>
-                <video v-show="playShow" v-cloak id="my-video" class="video-js" width="1200" controls preload="auto">
+                <video v-show="playShow" v-cloak id="my-video" class="video-js" width="1200" height="450" controls preload="auto">
                     <source src="../video/CEBVEC.mp4" type='video/mp4'>
                     <p class="vjs-no-js">您的浏览器不支持 视频播放，请升级您的浏览器后重试</p>
                 </video>

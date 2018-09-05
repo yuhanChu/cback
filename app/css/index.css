@@ -153,3 +153,5 @@ body { background: #fff; }
 #apply .layer .error { font-size: 14px; color: #ff0000; }
 
 #apply .layer .btns { width: 270px; height: 40px; line-height: 40px; text-align: center; background-color: #e00058; cursor: pointer; font-size: 14px; color: #ffffff; border-radius: 6px; margin: 30px auto 0; }
+
+video { -o-object-fit: fill; object-fit: fill; }

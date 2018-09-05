@@ -572,9 +572,9 @@
          '<li class="f_left contact">' +
          '<span class="tit" v-text="text.lang32">与我们保持联系</span>' +
          '<div class="con clearfix">' +
-         '<a href="javascript:;"><span class="phone"></span></a>' +
-         '<a href="javascript:;" class="mar22"><span class="email"></span></a>' +
-         '<a href="javascript:;"><span class="wechat"></span></a>' +
+         '<a href="/cn/contact.html"><span class="phone"></span></a>' +
+         '<a href="/cn/contact.html" class="mar22"><span class="email"></span></a>' +
+         '<a href="/cn/contact.html"><span class="wechat"></span></a>' +
          '</div>' +
          '</li>' +
          '<li class="f_left logo">' +
