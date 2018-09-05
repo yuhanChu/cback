@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="../css/public.css">
+    <link rel="stylesheet" href="../css/404.css">
+</head>
+
+<body>
+    <div id="app">
+        <my-head></my-head>
+        <my-nav :now="cur"></my-nav>
+        <div class="page-404 page-content">
+            <img src="../images/404/404.png">
+            <p class="big">Sorry Page Was Not Found</p>
+            <p class="small">We Are Sorry, the page you want isn`t here anymore.May be one the links below can help !</p>
+        </div>
+        <my-foot></my-foot>
+    </div>
+</body>
+<script type="text/javascript" src="../tools/vue.min.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>
+<script type="text/javascript">
+var app = new Vue({
+    el: '#app',
+    data: {
+        cur: 1,
+    },
+    methods: {},
+    created: function() {},
+    mounted: function() {
+
+    }
+
+})
+</script>
+
+</html>

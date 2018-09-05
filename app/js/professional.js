@@ -212,6 +212,7 @@ var app = new Vue({
         cur: 2,
         dataList: allList,
         now: 51,
+        path:location.pathname.match(/\/\w+/g)[0],
     },
     methods: {
         filter: function(code) {
@@ -219,7 +220,7 @@ var app = new Vue({
             location.href = "#" + code
         }
     },
-    created: function() {},
+    created: function() {console.log(this.path)},
     mounted: function() {
 
     }

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>教师培训</title>
+    <link rel="stylesheet" type="text/css" href="../css/public.css">
+    <link rel="stylesheet" type="text/css" href="../css/training.css">
+</head>
+
+<body>
+    <div id="app">
+        <my-head></my-head>
+        <my-nav :now="cur"></my-nav>
+        <div class="all-content">
+            <div class="label">国际教师＞教育培训</div>
+            <p class="info">英方培训中方教师，合格后可获得CPGE国际证书，最终形成熟悉中英两国教育体系，与国际接轨并具有国际竞争力的教师团队。</p>
+            <div class="box clearfix">
+                <div class="left f_left">
+                    <p class="top">循证教学法</p>
+                    <div class="bo">
+                        循证教学法是目前英国职业教育最主流教学方法，循证实践（Evidence-Based Practise），亦为循证学。
+                        <br> 强调以“证据为基础的实践”，引申为“遵循证据进行实践”，是实践者针对“消费者”的具体问题，在“消费者”的主动配合下，根据研究者提供的最佳证据及管理者制定的实践指南和标准等所进行的实践。具体说来循证实践是一个涉及研究者、实践者、实践对象与有关管理者四个方面的理论体系（具体教学方法可以通过中英职教卓越中心北京总部咨询英国NPTC教育专家）。
+                    </div>
+                </div>
+                <div class="right f_right">
+                    <p class="top">微格教学法</p>
+                    <div class="bo">
+                        微格教学法又称微型教学，它以现代教育理论为基础，利用先进的媒体信息技术，依据反馈原理和教学评价理论，分阶段系统培训教师教学技能的活动。
+                        <br> 微格教学法实际上是提供一个练习环境，使日常复杂的课堂教学得以精简，并能使联系者获得大量的反馈意见，微格教学实践一般控制在5-10分钟，在这几分钟内要求教师或者师范生将平时40分课堂内容能在这几分钟内完整呈现并且使得学生听懂、理解（具体教学方法可以通过中英职教卓越中心北京总部咨询英国NPTC教育专家）。
+                    </div>
+                </div>
+            </div>
+        </div>
+        <my-foot></my-foot>
+    </div>
+</body>
+<script type="text/javascript" src="../tools/vue.min.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>
+<script type="text/javascript">
+var app = new Vue({
+    el: '#app',
+    data: {
+        cur: 3,
+    },
+    methods: {},
+    created: function() {},
+    mounted: function() {
+
+    }
+
+})
+</script>
+
+</html>

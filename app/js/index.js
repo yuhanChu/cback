@@ -23,6 +23,7 @@ var app = new Vue({
         swCon: '',
         swUrl: '',
         text:text,
+        path:location.pathname.match(/\/\w+/g)[0],
     },
     methods: {
         videoEnd: function() {
@@ -80,8 +81,6 @@ var app = new Vue({
         },
     },
     created: function() {
-
-
     },
     mounted: function() {
         var _this = this;
@@ -96,15 +95,15 @@ var app = new Vue({
             nextButton: '.sw-next',
             onSlideChangeEnd: function(swiper) {
                 if (swiper.realIndex == 0) {
-                    _this.swUrl = '/cn/news1.html';
+                    _this.swUrl = _this.path+'/news1.html';
                     _this.swTile = _this.text.lang33;
                     _this.swCon = _this.text.lang34;
                 } else if (swiper.realIndex == 1) {
-                    _this.swUrl = '/cn/news2.html';
+                    _this.swUrl = _this.path+'/news2.html';
                     _this.swTile = _this.text.lang35;
                     _this.swCon = _this.text.lang36
                 } else if (swiper.realIndex == 2) {
-                    _this.swUrl = '/cn/news2.html';
+                    _this.swUrl = _this.path+'/news2.html';
                     _this.swTile = _this.text.lang37;
                     _this.swCon = _this.text.lang38
                 } else if (swiper.realIndex == 3) {

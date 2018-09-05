@@ -490,8 +490,8 @@
          '</div>' +
          '<div class="f_right btn-box">' +
          '<div class="lang">' +
-         '<a href="javascript:;" class="cn" :class="langCur==1?\'cur\':\'\'">中文</a>' +
-         '<a href="javascript:;" class="en" :class="langCur==2?\'cur\':\'\'">English</a>' +
+         '<a href="javascript:;" class="cn" :class="langCur==1?\'cur\':\'\'" @click="cnClick">中文</a>' +
+         '<a href="javascript:;" class="en" :class="langCur==2?\'cur\':\'\'" @click="enClick">English</a>' +
          '</div>' +
          '<a href="/cn/studentRegistration.html" class="student btns" v-text="text.lang1">学生注册</a>' +
          '<a href="/cn/teacherRegistration.html" class="teacher btns" v-text="text.lang2">老师注册</a>' +
@@ -507,26 +507,37 @@
                  text: text,
              }
          },
-         created: function() {}
+         methods: {
+         	cnClick:function() {
+         		var path = location.pathname.split('/');
+         		location.href='/cn/'+location.pathname.split('/')[path.length-1]
+         	},
+         	enClick:function() {
+         		var path = location.pathname.split('/');
+         		location.href='/en/'+location.pathname.split('/')[path.length-1]
+         	}
+         },
+         created: function() {
+         }
      });
 
 
      var navStr = '<div class="nav">' +
          '<ul class="box-center">' +
-         '<li :class="now==1?\'cur\':\'\'"><a href="/cn/" v-text="text.lang3">首页</a></li>' +
-         '<li :class="now==2?\'cur\':\'\'"><a href="/cn/professional.html" v-text="text.lang4">中英专业</a></li>' +
+         '<li :class="now==1?\'cur\':\'\'"><a :href="path+\'/\'" v-text="text.lang3">首页</a></li>' +
+         '<li :class="now==2?\'cur\':\'\'"><a :href="path+\'/professional.html\'" v-text="text.lang4">中英专业</a></li>' +
          '<li class="drop" :class="now==3?\'cur\':\'\'">' +
          '<span v-text="text.lang5">国际教师</span>' +
-         '<a href="/cn/educator.html" class="down" v-text="text.lang7">教育专家</a>' +
-         '<a href="/cn/training.html" class="down" v-text="text.lang6">教育培训</a>' +
+         '<a :href="path+\'/educator.html\'" class="down" v-text="text.lang7">教育专家</a>' +
+         '<a :href="path+\'/training.html\'" class="down" v-text="text.lang6">教育培训</a>' +
          '</li>' +
-         '<li :class="now==4?\'cur\':\'\'"><a href="/cn/build.html" v-text="text.lang8">专业共建</a></li>' +
+         '<li :class="now==4?\'cur\':\'\'"><a :href="path+\'/build.html\'" v-text="text.lang8">专业共建</a></li>' +
          '<li class="drop" :class="now==5?\'cur\':\'\'">' +
          '<span v-text="text.lang9">关于我们</span>' +
-         '<a href="/cn/summary-cebvec.html" class="down" v-text="text.lang10">CEBVEC简介</a>' +
-         '<a href="/cn/summary-nptc.html" class="down" v-text="text.lang11">Nptc介绍</a>' +
-         '<a href="/cn/news.html" class="down" v-text="text.lang12">新闻资讯</a>' +
-         '<a href="/cn/contact.html" class="down" v-text="text.lang13">联系我们</a>' +
+         '<a :href="path+\'/summary-cebvec.html\'" class="down" v-text="text.lang10">CEBVEC简介</a>' +
+         '<a :href="path+\'/summary-nptc.html\'" class="down" v-text="text.lang11">Nptc介绍</a>' +
+         '<a :href="path+\'/news.html\'" class="down" v-text="text.lang12">新闻资讯</a>' +
+         '<a :href="path+\'/contact.html\'" class="down" v-text="text.lang13">联系我们</a>' +
          '</li>' +
          '</ul>' +
          '</div>';
@@ -536,6 +547,7 @@
          data: function() {
              return {
                  text: text,
+                 path:location.pathname.match(/\/\w+/g)[0],
              }
          },
          created: function() {}
@@ -572,9 +584,9 @@
          '<li class="f_left contact">' +
          '<span class="tit" v-text="text.lang32">与我们保持联系</span>' +
          '<div class="con clearfix">' +
-         '<a href="/cn/contact.html"><span class="phone"></span></a>' +
-         '<a href="/cn/contact.html" class="mar22"><span class="email"></span></a>' +
-         '<a href="/cn/contact.html"><span class="wechat"></span></a>' +
+         '<a :href="path+\'/contact.html\'"><span class="phone"></span></a>' +
+         '<a :href="path+\'/contact.html\'" class="mar22"><span class="email"></span></a>' +
+         '<a :href="path+\'/contact.html\'"><span class="wechat"></span></a>' +
          '</div>' +
          '</li>' +
          '<li class="f_left logo">' +
@@ -603,10 +615,12 @@
          template: footStr,
          data: function() {
              return {
-                 text: text
+                 text: text,
+                 path:location.pathname.match(/\/\w+/g)[0],
              }
          },
-         created: function() {}
+         created: function() {
+         }
      });
 
      var promit = {
