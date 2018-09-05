@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>中英专业</title>
+    <link rel="stylesheet" type="text/css" href="../css/public.css">
+    <link rel="stylesheet" type="text/css" href="../css/professional.css">
+</head>
+
+<body>
+    <div id="app">
+        <my-head></my-head>
+        <my-nav :now="cur"></my-nav>
+        <div class="all-content">
+            <div class="label">首页＞中英专业</div>
+            <!-- <div class="number">CEBVEC共建专业已涉及19大类、761种专业</div> -->
+            <div class="categories">
+                <ul class="clearfix">
+                    <li v-for="(it,k) in dataList" v-text="k+1+' '+it.val" @click="filter(it.code)">农林牧渔大类</li>
+                </ul>
+            </div>
+            <div class="little">
+                <ul class="clearfix bt0">
+                    <li class="left">专业分类</li>
+                    <li class="right">专业</li>
+                </ul>
+                <ul class="clearfix list" v-for="(it,k) in dataList" :id="it.code">
+                    <li class="left" v-text="k+1+' '+it.val">5404 - 建筑设备类</li>
+                    <li class="right">
+                        <span v-for="val in it.major" v-text="val.name">540405 - 工业设备安装工程技术</span>
+                    </li>
+                </ul>
+            </div>
+            <a class="more" href="/cn/contact.html">了解更多专业</a>
+        </div>
+        <my-foot></my-foot>
+    </div>
+</body>
+<script type="text/javascript" src="../tools/vue.min.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>
+<script type="text/javascript" src="../js/professional.js"></script>
+
+</html>

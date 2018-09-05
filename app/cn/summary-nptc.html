@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>NPTC简介</title>
+    <link rel="stylesheet" type="text/css" href="../css/public.css">
+    <link rel="stylesheet" href="../css/summary-nptc.css">
+</head>
+
+<body>
+    <div id="app">
+        <my-head></my-head>
+        <my-nav :now="cur"></my-nav>
+        <div class="page-content">
+            <div class="label">关于我们＞NPTC简介</div>
+            <div id="video">
+                <div class="bg" v-show="!palyShow"><img src="../images/summary/play.png" @click="videoPlay"></div>
+                <video v-show="palyShow" id="my-video" class="video-js" controls preload="auto" width="658" @ended="">
+                    <source src="../video/Neath Port Talbot College Prospectus Vid....mp4" type='video/mp4'>
+                    <p class="vjs-no-js">您的浏览器不支持 视频播放，请升级您的浏览器后重试</p>
+                </video>
+            </div>
+            <div class="text">
+                <p>英国尼思港塔尔博特学院（简称NPTC）地处威尔士地区，是英国名列前茅、综合实力最强、拥有广泛国际影响力的职业教育学院之一。</p>
+                <p>NPTC官网：https://www.nptcgroup.ac.uk。</p>
+                <p>NPTC的优势：</p>
+                <p>(1) 规模优势：英国最大的职业学院，学生满意度排名与牛津大学齐名，是国际顶级职业院校的代表。</p>
+                <p>(2) 标准优势：英国教师标准的起草者，是世界顶级名校牛津大学、剑桥大学教师的职业资格培训基地。</p>
+                <p>(3) 专业优势：教师是来自各行各业的专家，且是各行业标准制定者之一，这些专家经过2年教师培训后，正式成为学校教师，教师专业知识在专业领域具有领先的优势。</p>
+                <p>(4) 职业化优势：教学根据企业需求来培养学生，并根据市场变化调整更新教学内容。有行业实践经验的教师培养出的学生在毕业后直接进入企业，不需要实习期，可立即上岗工作。</p>
+                <p>(5) 教师指导优势：教师会根据学生情况，帮助不同类型学生选择合适的课程，并在学习期间一直支持帮助学生，使之顺利完成高质量学业，为企业输送具有竞争力的行业专业人才。</p>
+                <p>(6) 学科优势：职业教育及培训门类丰富，学科专业覆盖建筑、机械制造、汽车、计算机、金融财会类、医疗护理、服装设计、市场营销、旅游、餐饮、酒店管理、教育等多个领域，并在足球和警务培训方面独树一帜。</p>
+                <p>(7) 学徒制优势：英国学徒制具有悠久的历史，底蕴深厚，经过百年的发展，不断完善，并注入现代先进技术的活力，为学生打开了职业成功之门。历年毕业的学生给企业带来很大价值，成为学校的荣誉标志。</p>
+            </div>
+        </div>
+        <my-foot></my-foot>
+    </div>
+</body>
+<script type="text/javascript" src="../tools/vue.min.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>
+<script type="text/javascript">
+var app = new Vue({
+    el: '#app',
+    data: {
+        cur: 5,
+        palyShow: false,
+        vi:null,
+    },
+    methods: {
+        videoEnd:function() {
+            this.palyShow = false;
+        },
+        videoPlay: function() {
+            this.palyShow = true;
+            this.vi.play();
+        }
+    },
+    created: function() {},
+    mounted: function() {
+        this.vi = document.getElementById('my-video');
+    }
+
+})
+</script>
+
+</html>

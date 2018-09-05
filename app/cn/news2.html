@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>新闻公告</title>
+    <link rel="stylesheet" type="text/css" href="../css/public.css">
+    <link rel="stylesheet" href="../css/news1.css">
+</head>
+
+<body>
+    <div id="app">
+        <my-head></my-head>
+        <my-nav :now="cur"></my-nav>
+        <div class="page-content detail">
+            <div class="label">关于我们＞新闻公告</div>
+            <p class="h">英国上议院、国际贸易部对英国教育机构开展对华教育合作（CEBVEC）支持函书</p>
+            <div class="block">
+                <p>中国区英国职业教育卓越中心(Centre of Excellence for British Vocational Education in China，以下简称CEBVEC)由英国政府支持设立，是英国与中国在职业教育领域的重点交流合作项目，该项目得到英国议会、威尔士政府、英国在华政府机构及行业协会的大力支持。</p>
+                <div class="img">
+                    <img src="../images/news/new2-1.png">
+                    <p>《英国上议院对英国教育机构开展对华教育合作支持函书》</p>
+                </div>
+                <div class="img">
+                    <img src="../images/news/new2-2.png">
+                    <p>《英国国际贸易部对CEBVEC的支持函书》</p>
+                </div>
+            </div>
+            <p class="time">时间：2017-10-10 中国区英国职业教育卓越中心</p>
+            <!-- <p class="next"><a href="javascript:void(0)">下一篇：文章标题22222</a></p> -->
+        </div>
+        <my-foot></my-foot>
+    </div>
+</body>
+<script type="text/javascript" src="../tools/vue.min.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>
+<script type="text/javascript">
+var app = new Vue({
+    el: '#app',
+    data: {
+        cur: 5,
+    },
+    methods: {},
+    created: function() {},
+    mounted: function() {
+
+    }
+
+})
+</script>
+
+</html>

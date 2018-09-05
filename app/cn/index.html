@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CEBVEC首页</title>
+    <link rel="stylesheet" type="text/css" href="../tools/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/public.css">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+</head>
+
+<body>
+    <div id="app">
+        <my-head></my-head>
+        <my-nav :now="cur"></my-nav>
+        <div class="explain">
+            <div class="box-center ex-box">
+                <p>
+                    这是一个充满不确定的时代，要想成功，需要发展智力，
+                    <br> 培养性格，提高能力。
+                </p>
+                <p class="p-ma">
+                    教育需要和时代接轨，不断进取、挑战、提升。CEBVEC能引领你了解
+                    <br> 多样的全球文化，帮助你获得解决问题所需的专业知识和实践技能，带
+                    <br> 你走向世界。
+                </p>
+                <p>
+                    CEBVEC引进助力学生职业发展的英国多个优势学科专业，丰富知识，开拓视野，锻炼
+                    <br> 能力。CEBVEC根据个人需求、企业需求、时代需求为学生定制专业课程，充分发挥学
+                    <br> 生个性，培养国际化专业人才。
+                </p>
+            </div>
+        </div>
+        <div class="apply">
+            <div class="apply-box">
+                <ul class="clearfix">
+                    <li class="ml0">
+                        <a href="/cn/professional.html">
+                            <div class="to"><img src="../images/home/major.png"></div>
+                            <div class="bo">国际专业</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/cn/educator.html">
+                            <div class="to"><img src="../images/home/teacher.png"></div>
+                            <div class="bo">国际教师</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/cn/build.html">
+                            <div class="to"><img src="../images/home/build.png"></div>
+                            <div class="bo">专业共建</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/cn/summary-cebvec.html">
+                            <div class="to"><img src="../images/home/contact.png"></div>
+                            <div class="bo">关于我们</div>
+                        </a>
+                    </li>
+                </ul>
+                <p>
+                    教育需要和时代接轨，不断进取、挑战、提升。CEBVEC能引领你了解多样的全球文化，
+                    <br> 帮助你获得解决问题所需的专业知识和实践技能，带你走向世界。
+                </p>
+                <div class="btns-box">
+                    <div>
+                        <div class="btns" @click="applyOpen">申请</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="video">
+            <p class="title">
+                视频介绍
+                <br>
+                <span>VIDEO INSTRUCTION</span>
+            </p>
+            <div class="video-box">
+                <div class="cover-box" v-show="!playShow"><img src="../images/home/play.png" @click="videoPlay"></div>
+                <video v-show="playShow" v-cloak id="my-video" class="video-js" width="1200" controls preload="auto">
+                    <source src="../video/CEBVEC.mp4" type='video/mp4'>
+                    <p class="vjs-no-js">您的浏览器不支持 视频播放，请升级您的浏览器后重试</p>
+                </video>
+            </div>
+            <p class="info">
+                中国区英国职业教育卓越中心（Centre of Excellence for British Vocational Education in China，简称CEBVEC）基于中英两国在教育领域长久以来的深度合作，以及中国政府大力发展职业教育的背景，受英国政府支持而成立，总部建在英国，在北京设立了中国区办公室，负责在中国所有的项目交流与合作事宜。CEBVEC依托于英国规模最大的职业教育学院--尼思港塔尔博特学院（简称NPTC），与中国高等职业学院开展国际教育合作，通过引进英国先进的国际教育标准和优势专业，帮助中国职业院校教育标准与国际接轨，培养国际化专业人才。
+            </p>
+        </div>
+        <div class="sw-box">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="sw1"></div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="sw2"></div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="sw3"></div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="sw4"></div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="sw5"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sw-word">
+            <div class="box">
+                <div class="sw-pre"></div>
+                <div class="sw-next"></div>
+                <div class="word">
+                    <p class="title" v-text="swTile">政府支持文涵</p>
+                    <p class="con" v-text="swCon">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitaticonsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                    </p>
+                    <a target="_blank" :href="swUrl">点击查看新闻</a>
+                </div>
+            </div>
+        </div>
+        <div class="success clearfix">
+            <div class="f_left img-box"></div>
+            <div class="f_left word-box">
+                <p class="title">合作案例：上海城建职业学院-中英职业教育卓远学院</p>
+                <span class="line"></span>
+                <p class="con">
+                    中英职业卓远学院由上海城建职业学院与CEBVEC英国成员院校——尼斯港塔尔波特学院（NPTC）共同建立。目前学院规划有建筑工程技术专业、工程造价专业、建筑设计专业、计算机应用技术等四个专业。
+                </p>
+                <p class="con">
+                    中英职业卓远学院的建设遵循欧盟标准，以英国国际职业教育标准为指导，并打造国际师资团队。学院教师持英国CPGE国际证书（国际认可的教育学研究生资格证书）开展教学管理工作。
+                </p>
+                <p class="con">
+                    除了英国优质专业内容资源外，学院为学生引进英国的核心能力课程，开展相关文化课程和活动；从课程内容、工作实践、职业素养等方面提升人才培养体系。助力学生获取国际技能证书和国际文凭。
+                </p>
+                <p class="con">
+                    学院立足于培养一批具有国际视野和国际竞争力，同时适应社会需求、行业趋势和企业要求的高素质人才，致力于服务国家和区域发展战略、服务企业发展。
+                </p>
+                <!-- <a class="more-btn" href="javascript:;">查看更多</a> -->
+            </div>
+        </div>
+        <my-foot></my-foot>
+        <div id="apply" v-cloak v-show="applyShow">
+            <div class="layer">
+                <div class="title">请留下您的联系方式，方便我们联系到您</div>
+                <span class="close" @click="applyClose"></span>
+                <div class="input-box">
+                    <input type="text" :style="{'border-color':nameEmpty?'red':'#e9e9e9'}" @focus="inFocus('nameEmpty')" placeholder="请输入您的姓名" v-model="sendJson.name">
+                    <input type="text" :style="{'border-color':companyEmpty?'red':'#e9e9e9'}" placeholder="请输入您的所在单位" @focus="inFocus('companyEmpty')" v-model="sendJson.company">
+                    <input type="text" :style="{'border-color':contactEmpty?'red':'#e9e9e9'}" placeholder="请输入您的联系方式" @focus="inFocus('contactEmpty')" v-model="sendJson.contact">
+                </div>
+                <p class="error" v-text="error"></p>
+                <div class="btns" @click="submit">申请</div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="../tools/vue.min.js"></script>
+<script type="text/javascript" src="../tools/vue-resource.min.js"></script>
+<script type="text/javascript" src="../tools/swiper.min.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>
+<script type="text/javascript" src="../js/index.js"></script>
+
+</html>

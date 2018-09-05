@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>老师注册</title>
+    <link rel="stylesheet" type="text/css" href="../tools/iview.css">
+    <link rel="stylesheet" type="text/css" href="../css/public.css">
+    <link rel="stylesheet" type="text/css" href="../css/teacherRegistration.css">
+</head>
+
+<body>
+    <div id="app">
+        <my-head></my-head>
+        <my-nav :now="cur"></my-nav>
+        <div class="box-center">
+            <div class="label">首页>老师注册</div>
+            <div class="main">
+                <div class="person">
+                    <div class="title">个人信息</div>
+                    <div class="fill clearfix">
+                        <span class="left">姓名：</span>
+                        <div class="right w200">
+                            <input type="text" v-model="json.name">
+                        </div>
+                    </div>
+                    <div class="fill clearfix">
+                        <span class="left">性别：</span>
+                        <div class="right w200">
+                            <template>
+                                <i-select style="width:100%;height:100%" @on-change="genderCh">
+                                    <i-option v-for="item in gender" :value="item.value">{{ item.label }}</i-option>
+                                </i-select>
+                            </template>
+                        </div>
+                    </div>
+                    <div class="fill clearfix">
+                        <span class="left">国籍：</span>
+                        <div class="right w200">
+                            <template>
+                                <i-select style="width:100%;height:100%" @on-change="nationCh">
+                                    <i-option v-for="item in nation" :value="item.label">{{ item.label }}</i-option>
+                                </i-select>
+                            </template>
+                        </div>
+                    </div>
+                    <div class="fill clearfix">
+                        <span class="left">户籍所在地：</span>
+                        <div class="right w400">
+                            <input type="text" v-model="json.residence">
+                        </div>
+                    </div>
+                    <div class="fill clearfix">
+                        <span class="left">证件类型：</span>
+                        <div class="right w200">
+                            <template>
+                                <i-select style="width:100%;height:100%" @on-change="cardCh">
+                                    <i-option v-for="item in card" :value="item.value">{{ item.label }}</i-option>
+                                </i-select>
+                            </template>
+                        </div>
+                    </div>
+                    <div class="fill clearfix">
+                        <span class="left">证件号码：</span>
+                        <div class="right w400">
+                            <input type="text" v-model="json.id_card">
+                        </div>
+                    </div>
+                    <div class="fill clearfix">
+                        <span class="left">移动电话：</span>
+                        <div class="right w200">
+                            <input type="text" v-model="json.mobile">
+                        </div>
+                    </div>
+                    <div class="fill clearfix">
+                        <span class="left">通讯地址：</span>
+                        <div class="right w400">
+                            <input type="text" v-model="json.address">
+                        </div>
+                    </div>
+                    <div class="fill clearfix">
+                        <span class="left">邮编：</span>
+                        <div class="right w400">
+                            <input type="text" v-model="json.postcode">
+                        </div>
+                    </div>
+                    <div class="fill clearfix">
+                        <span class="left">E-mail：</span>
+                        <div class="right w400">
+                            <input type="text" v-model="json.email">
+                        </div>
+                    </div>
+                </div>
+                <div class="education">
+                    <div class="title">最高学历信息</div>
+                    <div class="fill clearfix">
+                        <span class="left">所在学校名称：</span>
+                        <div class="right w350">
+                            <input type="text" v-model="json.school">
+                        </div>
+                    </div>
+                    <div class="fill clearfix">
+                        <span class="left">专业：</span>
+                        <div class="right w350">
+                            <input type="text" v-model="json.major">
+                        </div>
+                    </div>
+                    <div class="fill clearfix">
+                        <span class="left">学历类别：</span>
+                        <div class="right w350">
+                            <template>
+                                <i-select style="width:100%;height:100%" @on-change="levelCh">
+                                    <i-option v-for="item in level" :value="item.value">{{ item.label }}</i-option>
+                                </i-select>
+                            </template>
+                        </div>
+                    </div>
+                    <div class="fill clearfix">
+                        <span class="left">学制：</span>
+                        <div class="right w350">
+                            <template>
+                                <i-select style="width:100%;height:100%" @on-change="yearCh">
+                                    <i-option v-for="item in year" :value="item.label">{{ item.label }}</i-option>
+                                </i-select>
+                            </template>
+                        </div>
+                    </div>
+                    <div class="fill clearfix">
+                        <span class="left">层次：</span>
+                        <div class="right w350">
+                            <template>
+                                <i-select style="width:100%;height:100%" @on-change="gradaCh">
+                                    <i-option v-for="item in grada" :value="item.value">{{ item.label }}</i-option>
+                                </i-select>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+                <div class="job">
+                    <div class="title">入职信息</div>
+                    <div class="fill clearfix">
+                        <span class="left">所在院校：</span>
+                        <div class="right w275">
+                            <template>
+                                <i-select style="width:100%;height:100%" label-in-value @on-change="schoolCh">
+                                    <i-option v-for="item in school" :value="item.value">{{ item.label }}</i-option>
+                                </i-select>
+                            </template>
+                        </div>
+                    </div>
+                    <div class="fill clearfix" v-cloak v-if="schoolFlag==7">
+                        <span class="left" style="visibility: hidden;">所在院校：</span>
+                        <div class="right w400">
+                            <input type="text" v-model="work">
+                        </div>
+                    </div>
+                    <div class="fill clearfix">
+                        <span class="left">所在院系：</span>
+                        <div class="right w400">
+                            <input type="text" v-model="json.work_major">
+                        </div>
+                    </div>
+                    <div class="fill clearfix">
+                        <span class="left">现任职务：</span>
+                        <div class="right w400">
+                            <input type="text" v-model="json.work_position">
+                        </div>
+                    </div>
+                    <div class="fill clearfix">
+                        <span class="left">教学经历：</span>
+                        <div class="right w400 h168">
+                            <textarea v-model="json.experience"></textarea>
+                        </div>
+                    </div>
+                    <div class="fill clearfix">
+                        <span class="left">学习成果：</span>
+                        <div class="right w400 h168">
+                            <textarea v-model="json.achievement"></textarea>
+                        </div>
+                    </div>
+                    <!-- <p class="error">12346</p> -->
+                </div>
+                <div class="btns" @click="submit">提交</div>
+            </div>
+        </div>
+        <my-foot></my-foot>
+    </div>
+</body>
+<script type="text/javascript" src="../tools/vue.min.js"></script>
+<script type="text/javascript" src="../tools/vue-resource.min.js"></script>
+<script type="text/javascript" src="../tools/iview.min.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>
+<script type="text/javascript" src="../js/teacherRegisration.js"></script>
+
+</html>
