@@ -13,7 +13,7 @@
          lang8: "专业共建",
          lang9: "关于我们",
          lang10: "CEBVEC简介",
-         lang11: "Nptc介绍",
+         lang11: "NPTC介绍",
          lang12: "新闻资讯",
          lang13: "联系我们",
          lang14: "支持单位",
@@ -21,7 +21,7 @@
          lang16: "英中贸易协会",
          lang17: "威尔士政府",
          lang18: "英国政府",
-         lang19: "中英职业教育发展联盟",
+         lang19: "中英职业教育合作发展联盟",
          lang20: "中国合作院校",
          lang21: "上海城建职业学院",
          lang22: "成都职业技术学院",
@@ -161,10 +161,10 @@
          'profession110': "港口航道与治河工程",
          'profession111': "水利机电设备运行与管理",
          'profession112': "农林牧渔",
-         'new1': "我院与英国尼斯港塔尔伯特学院签署合作备忘录",
+         'new1': "上海工商职业技术学院与英国尼斯港塔尔伯特学院签署合作备忘录",
          "new2": "英国尼斯港塔尔波特学院及中英职业教育卓越中心代表团到访我校",
          "new3": "中英对接持续助力学院国际化发展",
-         "new4": "我校被推举为中英职业教育合作发展联盟副主席单位",
+         "new4": "上海城建职业学院被推举为中英职业教育合作发展联盟副主席单位",
          "new5": "黑龙江建筑职业技术学院院长王力教授当选中英职业教育合作发展联盟副主席",
          "new6": "中国职业教育对外合作联盟-中英职业教育合作发展联盟在京成立",
          "new7": "英国上议院、国际贸易部对英国教育机构开展对华教育合作（CEBVEC）支持函书",
@@ -234,6 +234,8 @@
          'regisration64': "请选择学历类别",
          'regisration65': "请选择学制",
          'regisration66': "请选择层次",
+         'header1': '中英职业教育卓越中心',
+         'pro1': '证件号码格式有误',
      }
      /**
       *
@@ -250,7 +252,7 @@
          lang8: "专业共建",
          lang9: "关于我们",
          lang10: "CEBVEC简介",
-         lang11: "Nptc介绍",
+         lang11: "NPTC介绍",
          lang12: "新闻资讯",
          lang13: "联系我们",
          lang14: "支持单位",
@@ -258,7 +260,7 @@
          lang16: "英中贸易协会",
          lang17: "威尔士政府",
          lang18: "英国政府",
-         lang19: "中英职业教育发展联盟",
+         lang19: "中英职业教育合作发展联盟",
          lang20: "中国合作院校",
          lang21: "上海城建职业学院",
          lang22: "成都职业技术学院",
@@ -398,10 +400,10 @@
          'profession110': "港口航道与治河工程",
          'profession111': "水利机电设备运行与管理",
          'profession112': "农林牧渔",
-         'new1': "我院与英国尼斯港塔尔伯特学院签署合作备忘录",
+         'new1': "上海工商职业技术学院与英国尼斯港塔尔伯特学院签署合作备忘录",
          "new2": "英国尼斯港塔尔波特学院及中英职业教育卓越中心代表团到访我校",
          "new3": "中英对接持续助力学院国际化发展",
-         "new4": "我校被推举为中英职业教育合作发展联盟副主席单位",
+         "new4": "上海城建职业学院被推举为中英职业教育合作发展联盟副主席单位",
          "new5": "黑龙江建筑职业技术学院院长王力教授当选中英职业教育合作发展联盟副主席",
          "new6": "中国职业教育对外合作联盟-中英职业教育合作发展联盟在京成立",
          "new7": "英国上议院、国际贸易部对英国教育机构开展对华教育合作（CEBVEC）支持函书",
@@ -471,6 +473,8 @@
          'regisration64': "请选择学历类别",
          'regisration65': "请选择学制",
          'regisration66': "请选择层次",
+         'header1': "CEBVEC",
+         'pro1': "证件号码格式有误",
      }
      var lang = location.pathname.match(/\/\w+/g)[0] == '/cn' ? 1 : 2;
      var text = location.pathname.match(/\/\w+/g)[0] == '/cn' ? cn : en;
@@ -484,7 +488,7 @@
          '<div class="f_left logo clearfix">' +
          '<img src="../images/public/logo.png">' +
          '<div class="f_left">' +
-         '<p>CEBVEC</p>' +
+         '<p>' + text['header1'] + '</p>' +
          '<span>Centre of Excellence for British Vocational Education in China</span>' +
          '</div>' +
          '</div>' +
@@ -493,8 +497,8 @@
          '<a href="javascript:;" class="cn" :class="langCur==1?\'cur\':\'\'" @click="cnClick">中文</a>' +
          '<a href="javascript:;" class="en" :class="langCur==2?\'cur\':\'\'" @click="enClick">English</a>' +
          '</div>' +
-         '<a href="/cn/studentRegistration.html" class="student btns" v-text="text.lang1">学生注册</a>' +
-         '<a href="/cn/teacherRegistration.html" class="teacher btns" v-text="text.lang2">老师注册</a>' +
+         '<a href="/cn/studentRegistration.html" class="student btns" v-text="text.lang1" target="_blank">学生注册</a>' +
+         '<a href="/cn/teacherRegistration.html" class="teacher btns" v-text="text.lang2" target="_blank">老师注册</a>' +
          '</div>' +
          '</div>' +
          '</div>';
@@ -508,17 +512,16 @@
              }
          },
          methods: {
-         	cnClick:function() {
-         		var path = location.pathname.split('/');
-         		location.href='/cn/'+location.pathname.split('/')[path.length-1]
-         	},
-         	enClick:function() {
-         		var path = location.pathname.split('/');
-         		location.href='/en/'+location.pathname.split('/')[path.length-1]
-         	}
+             cnClick: function() {
+                 var path = location.pathname.split('/');
+                 location.href = '/cn/' + location.pathname.split('/')[path.length - 1]
+             },
+             enClick: function() {
+                 var path = location.pathname.split('/');
+                 location.href = '/en/' + location.pathname.split('/')[path.length - 1]
+             }
          },
-         created: function() {
-         }
+         created: function() {}
      });
 
 
@@ -527,13 +530,13 @@
          '<li :class="now==1?\'cur\':\'\'"><a :href="path+\'/\'" v-text="text.lang3">首页</a></li>' +
          '<li :class="now==2?\'cur\':\'\'"><a :href="path+\'/professional.html\'" v-text="text.lang4">中英专业</a></li>' +
          '<li class="drop" :class="now==3?\'cur\':\'\'">' +
-         '<span v-text="text.lang5">国际教师</span>' +
+         '<a :href="path+\'/educator.html\'"><span v-text="text.lang5">国际教师</span></a>' +
          '<a :href="path+\'/educator.html\'" class="down" v-text="text.lang7">教育专家</a>' +
          '<a :href="path+\'/training.html\'" class="down" v-text="text.lang6">教育培训</a>' +
          '</li>' +
          '<li :class="now==4?\'cur\':\'\'"><a :href="path+\'/build.html\'" v-text="text.lang8">专业共建</a></li>' +
          '<li class="drop" :class="now==5?\'cur\':\'\'">' +
-         '<span v-text="text.lang9">关于我们</span>' +
+         '<a :href="path+\'/summary-cebvec.html\'"><span v-text="text.lang9">关于我们</span></a>' +
          '<a :href="path+\'/summary-cebvec.html\'" class="down" v-text="text.lang10">CEBVEC简介</a>' +
          '<a :href="path+\'/summary-nptc.html\'" class="down" v-text="text.lang11">Nptc介绍</a>' +
          '<a :href="path+\'/news.html\'" class="down" v-text="text.lang12">新闻资讯</a>' +
@@ -547,7 +550,7 @@
          data: function() {
              return {
                  text: text,
-                 path:location.pathname.match(/\/\w+/g)[0],
+                 path: location.pathname.match(/\/\w+/g)[0],
              }
          },
          created: function() {}
@@ -555,6 +558,7 @@
 
 
      var footStr = '<div class="foot">' +
+         '<transition name="fade"><div class="toTop" v-show="showToTop" @click="toTopFn">↑</div></transition>' +
          '<div class="foot-top">' +
          '<ul class="clearfix">' +
          '<li class="f_left ml0 pl0 bl0">' +
@@ -563,7 +567,7 @@
          '<div class="con"><a target="_blank" href="http://www.cbbc.org/" v-text="text.lang16">英中贸易协会</a></div>' +
          '<div class="con"><a target="_blank" href="https://gov.wales/?lang=en" v-text="text.lang17">威尔士政府</a></div>' +
          '<div class="con"><a target="_blank" href="https://www.gov.uk/" v-text="text.lang18">英国政府</a></div>' +
-         '<div class="con"><a target="_blank" href="http://www.cukvecda.org/" v-text="text.lang19">中英职业教育发展联盟</a></div>' +
+         '<div class="con"><a target="_blank" href="http://www.cukvecda.org/" v-text="text.lang19">中英职业教育合作发展联盟</a></div>' +
          '</li>' +
          '<li class="f_left">' +
          '<span class="tit" v-text="text.lang20">中国合作院校</span>' +
@@ -598,7 +602,7 @@
          '<div class="foot-bottom">' +
          '<div class="div-link">' +
          '<p class="link">' +
-         '<a href="javascript:;">地址：北京海淀区北三环西路48号院2号楼19层</a>' +
+         '<a href="javascript:;">地址：中国·北京科技会展中心2号楼19层</a>' +
          '<span></span>' +
          '<a href="javascript:;">© 2018 CEBVEC</a>' +
          '<span></span>' +
@@ -616,10 +620,33 @@
          data: function() {
              return {
                  text: text,
-                 path:location.pathname.match(/\/\w+/g)[0],
+                 path: location.pathname.match(/\/\w+/g)[0],
+                 showToTop: false,
              }
          },
-         created: function() {
+         methods: {
+             isShowToTop: function() {
+                 var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+                 this.showToTop = scrollTop > 200;
+             },
+             toTopFn:function(){
+               var obj=document.body.scrollTop?document.body:document.documentElement;
+               var s=obj.scrollTop/20
+               var timer=setInterval(function(){
+                  var t=obj.scrollTop-s;
+                  if(t<=0){
+                     clearInterval(timer);
+                     t=0;
+                  }
+                  obj.scrollTop=t
+               }, 20);
+             }
+         },
+         mounted: function() {
+            this.isShowToTop()
+             window.addEventListener("scroll", function() {
+                 this.isShowToTop()
+             }.bind(this))
          }
      });
 

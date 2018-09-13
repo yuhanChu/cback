@@ -1,4 +1,4 @@
-var api = '/api/orther/contact/handle';
+var api = 'https://www.studybanks.com/api/orther/contact/handle';
 Vue.http.options.emulateJSON = true;
 var app = new Vue({
     el: '#app',
@@ -71,7 +71,7 @@ var app = new Vue({
             }
             this.$http.post(api, this.sendJson).then(function(res) {
                 if (res.body.code == 1) {
-                    promit.msg('app', this.text.home1)
+                    promit.msg('app', this.text.home4)
                     this.applyClose()
                 } else {
                     this.error = '* ' + res.body.data || res.body.message;

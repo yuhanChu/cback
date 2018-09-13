@@ -1,4 +1,4 @@
-var api = '/api/orther/contact/handle';
+var api = 'https://www.studybanks.com/api/orther/contact/handle';
 Vue.http.options.emulateJSON = true;
 var app = new Vue({
     el: '#app',
@@ -71,9 +71,72 @@ var app = new Vue({
             work_position: '',
             experience: '',
             achievement: ''
-        }
+        },
+        cardType: false,
     },
     methods: {
+        checkIdCard: function(id) {
+            var idcard = String(id);
+            var City = [11, 12, 13, 14, 15, 21, 22, 23, 31, 32, 33, 34, 35, 36, 37, 41, 42, 43, 44, 45, 46, 50, 51, 52, 53, 54, 61, 62, 63, 64, 65, 71, 81, 82, 91];
+            var iSum = 0;
+            var idcity = null;
+            var idCardLength = idcard.length;
+            //长度验证
+            var patt1 = new RegExp(/^\d{17}(\d|x|X)$/i);
+            var patt2 = new RegExp(/^\d{15}$/i);
+            if (!patt1.test(idcard) && !patt2.test(idcard)) {
+                return false;
+            }
+            //地区验证
+            for (var i = 0; i < City.length; i++) {
+                if (String(City[i]) === idcard.slice(0, 2)) {
+                    idcity = idcard.slice(0, 2);
+                    break;
+                }
+            }
+            if (idcity == null) {
+                return false;
+            }
+            // 15位身份证验证生日，转换为18位
+            if (idCardLength == 15) {
+                idcard = idcard.slice(0, 6) + "19" + idcard.slice(6, 15); //15to18
+                var Bit18 = getVerifyBit(idcard); //算出第18位校验码
+                idcard = idcard + Bit18;
+            }
+            // 判断是否大于2078年，小于1900年
+            var year = idcard.slice(6, 10);
+            if (year < 1900 || year > 2078) {
+                return false;
+            }
+            //身份证编码规范验证
+            var idcard_base = idcard.slice(0, 17);
+            var idcard_v = idcard.slice(17, 18);
+            if (idcard_v == 'x' || idcard_v == 'X') {
+                idcard_v = 'X';
+            }
+            if (idcard_v !== getVerifyBit(idcard_base)) {
+                return false;
+            }
+            //alert ('yes');
+            return true;
+            /* 身份证18位编码规则：dddddd yyyymmdd xxx y */
+            function getVerifyBit(idcard_base) {
+                if (idcard_base.length != 17) {
+                    return false;
+                }
+                //加权因子
+                var factor = [7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2];
+                //校验码对应值
+                var verify_number_list = ['1', '0', 'X', '9', '8', '7', '6', '5', '4', '3', '2'];
+                var checksum = 0;
+                for (var i = 0; i < idcard_base.length; i++) {
+                    checksum += idcard_base.slice(i, i + 1) * factor[i];
+                }
+                var mod = checksum % 11;
+                var verify_number = verify_number_list[mod];
+                return verify_number;
+            }
+        },
         genderCh: function(res) {
             this.json.gender = res;
         },
@@ -99,6 +162,13 @@ var app = new Vue({
             } else {
                 this.json.work_school = ''
             }
+        },
+        cardFouse: function() {
+            if (this.cardType) {
+                this.cardType = false;
+                this.json.id_card = '';
+            }
+
         },
         submit: function() {
             if (this.schoolFlag == 7) {
@@ -184,6 +254,26 @@ var app = new Vue({
                 promit.msg('app', text.regisration58)
                 return
             }
+            if (this.json.card_type == 0 && !this.checkIdCard(this.json.id_card)) {
+                this.cardType = true;
+                promit.msg('app', text.pro1)
+                return
+            }
+            if (this.json.card_type == 1 && !/^(P\d{7}|G\d{7,8}|TH\d{7,8}|S\d{7,8}|A\d{7,8}|L\d{7,8}|\d{9}|D\d+|1[4,5]\d{7}|E[A-Za-z]\d{7}|E\d{8})$/.test(this.json.id_card)) {
+                this.cardType = true;
+                promit.msg('app', text.pro1)
+                return
+            }
+            if (this.json.card_type == 2 && !/^[HMhm]{1}([0-9]{10}|[0-9]{8})$/.test(this.json.id_card)) {
+                this.cardType = true;
+                promit.msg('app', text.pro1)
+                return
+            }
+            if (this.json.card_type == 3 && !/^[0-9]{8}$/.test(this.json.id_card)) {
+                this.cardType = true;
+                promit.msg('app', text.pro1)
+                return
+            }
             this.$http.post(api, this.json).then(function(res) {
                 if (res.body.code == 1) {
                     promit.msg('app', text.regisration59);
@@ -194,7 +284,9 @@ var app = new Vue({
             });
         },
     },
-    created: function() {},
+    created: function() {
+
+    },
     mounted: function() {
 
     }
