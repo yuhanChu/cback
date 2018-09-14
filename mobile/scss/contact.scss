@@ -1,0 +1,120 @@
+@import './commen.scss';
+
+.box-center {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.all-content {
+    width: 1140px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+    &>.label {
+        @include font(12px, #999999);
+        line-height: 12px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    /* .box {
+        padding: 0 15px;
+        margin-top: 25px;
+        margin-bottom: 146px;
+        &>div {
+            width: 540px;
+            height: 477px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,.1);
+            .top {
+                height: 180px;
+            }
+            .bo {
+                padding: 30px 0 0 52px;
+                .place {
+                	@include font(18px,#333333);
+                	line-height: 28px;
+                }
+                .phone {
+                	margin-top: 25px;
+                	@include font(14px,#333333);
+                	line-height: 28px;
+                	p {
+                		color:#666666;
+                		span {
+                			margin-right: 30px;
+                		}
+                	}
+                }
+                .address {
+                	@extend .phone;
+                	margin-top: 35px;
+                }
+            }
+        }
+        .left {
+    			background: url('../images/contact/beijing.png') no-repeat top center;
+        }
+        .right {
+    			background: url('../images/contact/end.png') no-repeat top center;
+        }
+    } */
+    .main {
+        padding-top: 28px;
+        padding: 28px 15px 0;
+        .office {
+            padding: 37px 0 40px 595px;
+            margin-bottom: 48px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+            .name {
+                @include font(16px, #e00058);
+                line-height: 16px;
+            }
+            .phone {
+                margin-top: 25px;
+                position: relative;
+                .ico {
+                    position: absolute;
+                    width: 24px;
+                    height: 24px;
+                    background: url('../images/contact/phone.png') no-repeat;
+                    top: 2px;
+                    left: 0;
+                }
+                .tit {
+                    padding-left: 38px;
+                    @include font(12px,
+                    #333333);
+                    line-height: 20px;
+                }
+                .con {
+                    padding-left: 38px;
+                    @include font(12px,
+                    #666666);
+                    line-height: 24px;
+                    span {
+                        margin-right: 20px;
+                    }
+                }
+            }
+            .email {
+                @extend .phone;
+                .ico {
+                	background-image: url('../images/contact/email.png');
+                }
+            }
+            .address {
+            	@extend .phone;
+                .ico {
+                	background-image: url('../images/contact/add.png');
+                }
+            }
+            &.ch {
+            	background: url('../images/contact/ch.png') no-repeat top left/530px auto;
+            }
+            &.en {
+            	background: url('../images/contact/en.png') no-repeat top left/530px auto;
+            }
+        }
+    }
+}

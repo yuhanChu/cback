@@ -1,0 +1,113 @@
+@charset "UTF-8";
+/** 头部 */
+.head { width: 100%; backgrund: #fff; height: 140px; }
+
+.head .logo { height: 140px; }
+
+.head .logo > img { width: 123px; height: 95px; margin-top: 26px; float: left; }
+
+.head .logo > div { margin-left: 25px; }
+
+.head .logo > div > p { font-size: 24px; color: #333333; line-height: 20px; margin-top: 48px; font-family: '方正黑体简体'; }
+
+.head .logo > div span { font-size: 12px; color: #333333; line-height: 20px; font-family: '方正黑体简体'; display: block; margin-top: 7px; }
+
+.head .btn-box { height: 140px; }
+
+.head .btn-box .lang { margin-top: 20px; text-align: right; }
+
+.head .btn-box .lang a { font-size: 12px; color: #666666; line-height: 20px; cursor: pointer; }
+
+.head .btn-box .lang .en { padding-left: 10px; }
+
+.head .btn-box .lang .cn { padding-right: 10px; border-right: 1px solid #e9e9e9; }
+
+.head .btn-box .lang .cur { color: #e50046; }
+
+.head .btn-box .btns { display: inline-block; margin-top: 20px; width: 84px; height: 30px; line-height: 30px; text-align: center; background-color: #e00058; cursor: pointer; font-size: 14px; color: #ffffff; border-radius: 3px; }
+
+.head .btn-box .student { margin-right: 18px; }
+
+/** 导航 */
+.nav { height: 50px; background: #f9f9f9; }
+
+.nav ul { margin-top: 0; padding: 0; height: 50px; }
+
+.nav li { width: 240px; height: 50px; line-height: 50px; text-align: center; cursor: pointer; float: left; position: relative; z-index: 1; }
+
+.nav li a { display: block; width: 100%; line-height: 50px; font-size: 14px; color: #666666; }
+
+.nav li .down { display: none; line-height: 34px; }
+
+.nav .cur a { color: #e50046; }
+
+.nav .cur:after { content: ""; background: #e00058; position: absolute; left: 0; top: 0; height: 2px; width: 100%; }
+
+.nav li:hover a { color: #fff; background: #e00058; }
+
+.nav li:hover .down { display: block; }
+
+.nav li:hover .down:hover { background: #be004b; }
+
+/** 底部 */
+.foot { width: 100%; }
+
+.foot .foot-top { padding: 46px 0 42px; background: url("../images/public/foot.png") no-repeat top left/cover; position: relative; }
+
+.foot .foot-top > ul { height: 212px; width: 1086px; margin: 0 auto; }
+
+.foot .foot-top > ul li { height: 100%; padding-left: 44px; border-left: 1px solid #9c9899; margin-left: 45px; position: relative; }
+
+.foot .foot-top > ul li.pl0 { padding-left: 0; }
+
+.foot .foot-top > ul li.bl0 { border-left: 0; }
+
+.foot .foot-top > ul li.ml0 { margin-left: 0; }
+
+.foot .foot-top > ul li .tit { font-size: 16px; color: #ffffff; display: block; line-height: 16px; margin-bottom: 30px; }
+
+.foot .foot-top > ul li .con { font-size: 14px; color: #ffffff; line-height: 14px; margin-bottom: 16px; }
+
+.foot .foot-top > ul li .con > a { font-size: 14px; color: #ffffff; line-height: 14px; display: inline-block; }
+
+.foot .foot-top > ul li.contact .con a { float: left; }
+
+.foot .foot-top > ul li.contact .con a.mar22 { margin: 0 22px; }
+
+.foot .foot-top > ul li.contact .con a span { display: block; width: 42px; height: 42px; }
+
+.foot .foot-top > ul li.contact .con a .phone { background: url("../images/public/phone.png") no-repeat; }
+
+.foot .foot-top > ul li.contact .con a .email { background: url("../images/public/mail.png") no-repeat; }
+
+.foot .foot-top > ul li.contact .con a .wechat { background: url("../images/public/wei.png") no-repeat; }
+
+.foot .foot-top > ul li.logo img { margin-top: 102px; }
+
+.foot .foot-top > ul li.logo p { font-size: 18px; color: #ffffff; line-height: 18px; margin-top: 10px; font-family: '方正书宋简体'; text-align: center; }
+
+.foot .foot-bottom { background: #3c3d43; padding: 27px; }
+
+.foot .foot-bottom .div-link { text-align: center; }
+
+.foot .foot-bottom .div-link .link { display: inline-block; line-height: 30px; }
+
+.foot .foot-bottom .div-link .link a { font-size: 14px; color: #979797; }
+
+.foot .foot-bottom .div-link .link span { display: inline-block; width: 1px; height: 12px; background: #979797; margin: 0 20px; }
+
+.foot .foot-bottom .div-link .link-ic { display: inline-block; line-height: 30px; }
+
+.foot .foot-bottom .div-link .link-ic a { margin-left: 15px; }
+
+.foot .foot-bottom .div-link .link-ic img { vertical-align: middle; }
+
+.layer-msg { padding: 10px 50px; background: rgba(0, 0, 0, 0.7); font-size: 14px; color: #fff; line-height: 20px; position: fixed; top: 50%; left: 50%; -webkit-transform: translateX(-50%); -ms-transform: translateX(-50%); transform: translateX(-50%); z-index: 1000; }
+
+.hidd { overflow: hidden; }
+
+.toTop { width: 40px; height: 40px; border: 1px solid #999; border-radius: 4px; line-height: 40px; text-align: center; font-size: 20px; color: #333; background: #fff; position: fixed; right: 100px; bottom: 200px; z-index: 2; cursor: pointer; }
+
+.fade-enter-active, .fade-leave-active { opacity: 1; -webkit-transition: all .4s; -o-transition: all .4s; transition: all .4s; }
+
+.fade-enter, .fade-leave-to { opacity: 0; }

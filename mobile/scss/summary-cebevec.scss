@@ -1,0 +1,9 @@
+@import "commen.scss";
+.page-content{width:1200px;margin:0 auto}
+.page-content{.label{@include font(12px,#999999);line-height:12px;margin-top:20px;margin-bottom:10px}
+	.img{max-width:100%;
+		img{display:block;margin:0 auto}
+		margin-top: 30px;
+	}
+	.text{width:750px;margin:40px auto;line-height:28px;font-size:14px;color:#666666;text-align:center}
+}
