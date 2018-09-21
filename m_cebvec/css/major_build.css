@@ -1,0 +1,31 @@
+.main-nav { width: 100%; height: 0.8rem; line-height: 0.8rem; }
+
+.main-nav li { float: left; width: 33.33%; text-align: center; }
+
+.main-nav li .tab { display: inline-block; height: 0.8rem; font-size: 0.26rem; color: #666; position: relative; }
+
+.main-nav .act span:after { content: ""; position: absolute; left: 0; bottom: 0; width: 100%; background: #e00058; height: 2px; border-radius: 2px; }
+
+.main { border-top: 0.3rem solid #f6f6f6; border-bottom: 0.3rem solid #f6f6f6; }
+
+.zhengshu { padding: 0.3rem; }
+
+.zhengshu p { color: #666; font-size: 0.26rem; line-height: 2em; }
+
+.zhengshu .img { width: 5.46rem; margin: 0.5rem auto; }
+
+.zhengshu .img img { width: 100%; display: block; }
+
+.buzhou { padding: 0.3rem; }
+
+.buzhou li { margin-bottom: 0.6rem; }
+
+.buzhou p { color: #666; font-size: 0.26rem; line-height: 2em; text-indent: 2em; }
+
+.buzhou p:first-child { text-indent: 0; }
+
+.buzhou .img { margin-top: 0.2rem; }
+
+.buzhou .img img { display: block; width: 100%; }
+
+.liucheng img { display: block; width: 100%; }

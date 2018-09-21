@@ -1,0 +1,35 @@
+.main { border-top: 0.3rem solid #f6f6f6; border-bottom: 0.3rem solid #f6f6f6; padding: 0.3rem; }
+
+.main .block-title { text-align: center; position: relative; font-size: 0.26rem; color: #333; line-height: 2em; }
+
+.main .block-title span { padding: 0 0.3rem; background: #fff; position: relative; }
+
+.main .block-title:before { content: ""; position: absolute; left: 0; top: 50%; width: 100%; border-top: 1px dashed #b9b9b9; }
+
+.main .teacher-list { padding: 0.5rem 0 0.2rem; }
+
+.main .teacher-list:after { display: block; clear: both; content: ""; }
+
+.main .teacher-list li { float: left; width: 2.3rem; text-align: center; color: #e00058; margin-bottom: 0.3rem; }
+
+.main .teacher-list img { width: 1.6rem; margin-bottom: 0.4rem; }
+
+.main .teacher-list p { font-size: 0.24rem; line-height: 1.5em; }
+
+.main .block1 ul { padding-left: 1.15rem; }
+
+.pop-box { width: 6.9rem; height: 8rem; background: #fff; position: fixed; left: 50%; top: 50%; -webkit-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); z-index: 99; border-radius: 4px; padding: 0.4rem 0.4rem 1.3rem; }
+
+.pop-box .img { width: 1.6rem; margin: 0 auto; padding: 0.2rem 0; }
+
+.pop-box .img img { width: 100%; }
+
+.pop-box .name { color: #e00058; text-align: center; font-size: 0.3rem; line-height: 0.52rem; }
+
+.pop-box .name span { margin: 0 .5em; }
+
+.pop-box .remark { text-align: center; font-size: 0.24rem; line-height: 0.52rem; }
+
+.pop-box .introduce { font-size: 0.26rem; line-height: 2em; color: #666; margin-top: 0.3rem; }
+
+.pop-box .close-btn { position: absolute; left: 50%; bottom: 0.4rem; -webkit-transform: translateX(-50%); -ms-transform: translateX(-50%); transform: translateX(-50%); width: 3rem; text-align: center; line-height: 0.68rem; border: 1px solid #e00058; color: #e00058; border-radius: 4px; }

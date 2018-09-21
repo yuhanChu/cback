@@ -1,0 +1,32 @@
+@import "_init.scss";
+.main{@include border1;padding:30/$dw+rem;}
+.main{
+	.block-title{
+		text-align:center;position:relative;font-size:26/$dw+rem;color:#333;line-height:2em;
+		span{padding:0 30/$dw+rem;background:#fff;position:relative;}
+		&:before{content:"";position:absolute;left:0;top:50%;width:100%;border-top:1px dashed #b9b9b9;}
+	}
+	.teacher-list{
+		@include clear;padding:50/$dw+rem 0 20/$dw+rem;
+		li{float:left;width:230/$dw+rem;text-align:center;color:$tColor;margin-bottom:30/$dw+rem;}
+		img{width:160/$dw+rem;margin-bottom:40/$dw+rem;}
+		p{font-size:24/$dw+rem;line-height:1.5em;}
+	}
+	.block1{
+		ul{padding-left:115/$dw+rem;}
+	}
+}
+.pop-teacher{}
+.pop-box{width:690/$dw+rem;height:800/$dw+rem;background:#fff;position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:99;border-radius:4px;padding:40/$dw+rem 40/$dw+rem 130/$dw+rem;}
+.pop-box{
+	.img{
+		width:160/$dw+rem;margin:0 auto;padding:20/$dw+rem 0;
+		img{width:100%;}
+	}
+	.name{color:$tColor;text-align:center;font-size:30/$dw+rem;line-height:52/$dw+rem;
+		span{margin:0 .5em;}
+	}
+	.remark{text-align:center;font-size:24/$dw+rem;line-height:52/$dw+rem;}
+	.introduce{font-size:26/$dw+rem;line-height:2em;color:#666;margin-top:30/$dw+rem;}
+	.close-btn{position:absolute;left:50%;bottom:40/$dw+rem;transform:translateX(-50%);width:300/$dw+rem;text-align:center;line-height:68/$dw+rem;border:1px solid $tColor;color:$tColor;border-radius:4px;}
+}

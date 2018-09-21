@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>老师注册</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script>
+    (function() {
+        var width = document.documentElement.clientWidth;
+        if (width > 414) {
+            width = 414
+        }
+        document.documentElement.style.fontSize = width / 7.5 + "px";
+        window.onresize = function() {
+            var width = document.documentElement.clientWidth;
+            if (width > 414) {
+                width = 414
+            }
+            document.documentElement.style.fontSize = width / 7.5 + "px";
+        }
+    })();
+    </script>
+    <link rel="stylesheet" type="text/css" href="../css/cube.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/public.css">
+    <link rel="stylesheet" type="text/css" href="../css/teacher-registration.css">
+</head>
+
+<body>
+    <div id="my-app">
+        <my-header>老师注册</my-header>
+        <div class="my-main">
+            <div id="app">
+                <div class="info">
+                    <div class="tit">个人信息</div>
+                    <div class="import">
+                        <span class="left">姓名</span>
+                        <label class="right">
+                            <input placeholder="未填写" v-model="json.name">
+                        </label>
+                    </div>
+                    <div class="choose" @click="showPicker(gender,genderIndex,'gender','genderIndex')">
+                        <span class="left">性别</span>
+                        <div class="selet">
+                            <span class="cubeic-arrow" v-if="!json.gender"></span>
+                            <span class="con" v-if="json.gender" v-text="genTxt"></span>
+                        </div>
+                    </div>
+                    <div class="choose" @click="showPicker(nation,countryIndex,'country','countryIndex')">
+                        <span class="left">国籍</span>
+                        <div class="selet">
+                            <span class="cubeic-arrow" v-if="!json.country"></span>
+                            <span class="con" v-if="json.country" v-text="json.country"></span>
+                        </div>
+                    </div>
+                    <div class="import">
+                        <span class="left">户籍所在地</span>
+                        <label class="right">
+                            <input placeholder="未填写" v-model="json.residence">
+                        </label>
+                    </div>
+                    <div class="choose" @click="showPicker(card,cardIndex,'card_type','cardIndex')">
+                        <span class="left">证件类型</span>
+                        <div class="selet">
+                            <span class="cubeic-arrow" v-if="!cardTxt"></span>
+                            <span class="con" v-if="cardTxt" v-text="cardTxt"></span>
+                        </div>
+                    </div>
+                    <div class="import">
+                        <span class="left">证件号码</span>
+                        <label class="right">
+                            <input placeholder="未填写" v-model="json.id_card">
+                        </label>
+                    </div>
+                    <div class="import">
+                        <span class="left">移动电话</span>
+                        <label class="right">
+                            <input placeholder="未填写" v-model="json.mobile">
+                        </label>
+                    </div>
+                    <div class="import">
+                        <span class="left">通讯地址</span>
+                        <label class="right">
+                            <input placeholder="未填写" v-model="json.address">
+                        </label>
+                    </div>
+                    <div class="import">
+                        <span class="left">邮编</span>
+                        <label class="right">
+                            <input placeholder="未填写" v-model="json.postcode">
+                        </label>
+                    </div>
+                    <div class="import bm0">
+                        <span class="left">E-mail</span>
+                        <label class="right">
+                            <input placeholder="未填写" v-model="json.email">
+                        </label>
+                    </div>
+                </div>
+                <div class="education">
+                    <div class="tit">最高学历信息</div>
+                    <div class="import">
+                        <span class="left">毕业学校名称</span>
+                        <label class="right">
+                            <input placeholder="未填写" v-model="json.school">
+                        </label>
+                    </div>
+                    <div class="import">
+                        <span class="left">专业</span>
+                        <label class="right">
+                            <input placeholder="未填写" v-model="json.major">
+                        </label>
+                    </div>
+                    <div class="choose" @click="showPicker(level,typeIndex,'level_type','typeIndex')">
+                        <span class="left">学历类别</span>
+                        <div class="selet">
+                            <span class="cubeic-arrow" v-if="!json.level_type"></span>
+                            <span class="con" v-if="json.level_type" v-text="levelTxt"></span>
+                        </div>
+                    </div>
+                    <div class="choose" @click="showPicker(year,systemIndex,'system','systemIndex')">
+                        <span class="left">学制</span>
+                        <div class="selet">
+                            <span class="cubeic-arrow" v-if="!json.system"></span>
+                            <span class="con" v-if="json.system" v-text="json.system"></span>
+                        </div>
+                    </div>
+                    <div class="choose bm0" @click="showPicker(grada,levelIndex,'level','levelIndex')">
+                        <span class="left">层次</span>
+                        <div class="selet">
+                            <span class="cubeic-arrow" v-if="!json.level"></span>
+                            <span class="con" v-if="json.level" v-text="graTxt"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="job">
+                    <div class="tit">入职信息</div>
+                    <div class="choose" @click="showPicker(school,schoolIndex,'school','schoolIndex')">
+                        <span class="left">所在院校</span>
+                        <div class="selet">
+                            <span class="cubeic-arrow" v-if="!schoolTxt"></span>
+                            <span class="con" v-if="schoolTxt" v-text="schoolTxt"></span>
+                        </div>
+                    </div>
+                    <div class="import" v-if="schoolFlag==7">
+                        <span class="left">所在院校</span>
+                        <label class="right">
+                            <input placeholder="未填写" v-model="work">
+                        </label>
+                    </div>
+                    <div class="import">
+                        <span class="left">所在院系</span>
+                        <label class="right">
+                            <input placeholder="未填写" v-model="json.work_major">
+                        </label>
+                    </div>
+                    <div class="import">
+                        <span class="left">现任职务</span>
+                        <label class="right">
+                            <input placeholder="未填写" v-model="json.work_position">
+                        </label>
+                    </div>
+                    <div class="import bm0">
+                        <span class="left">教学经历</span>
+                        <label class="right">
+                            <input placeholder="未填写" v-model="json.experience">
+                        </label>
+                    </div>
+                </div>
+                <div class="submit" @click="submit">提交</div>
+            </div>
+        </div>
+        <page-bottom></page-bottom>
+    </div>
+</body>
+<script type="text/javascript" src="../js/vue.min.js"></script>
+<script type="text/javascript" src="../js/vue-resource.min.js"></script>
+<script type="text/javascript" src="../js/cube.min.js"></script>
+<script type="text/javascript" src="../js/cLang.js"></script>
+<script type="text/javascript" src="../js/layer/layer.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>
+<script type="text/javascript" src="../js/teacher-registration.js"></script>
+
+</html>

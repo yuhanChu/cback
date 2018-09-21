@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Cebvec</title>
+    <script>
+    (function() {
+        var width = document.documentElement.clientWidth;
+        if (width > 414) {
+            width = 414
+        }
+        document.documentElement.style.fontSize = width / 7.5 + "px";
+        window.onresize = function() {
+            var width = document.documentElement.clientWidth;
+            if (width > 414) {
+                width = 414
+            }
+            document.documentElement.style.fontSize = width / 7.5 + "px";
+        }
+    })();
+    </script>
+    <link rel="stylesheet" href="../css/cube.min.css">
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../css/video.css">
+    <link rel="stylesheet" href="../css/teacher_training.css">
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <my-header>教育培训</my-header>
+        <div class="my-main">
+            <div class="main">
+                <p class="top-text">英方培训中方教师，合格后可获得CPGE国际证书，最终形成熟悉中英两国教育体系，与国际接轨并具有国际竞争力的教师团队。</p>
+                <div class="block">
+                    <div class="block-title">
+                        <p>循证教学法</p>
+                    </div>
+                    <div class="block-text">
+                        <p>循证教学法是目前英国职业教育最主流教学方法，循证实践（Evidence-Based Practise），亦为循证学。</p>
+                        <p>强调以“证据为基础的实践”，引申为“遵循证据进行实践”，是实践者针对“消费者”的具体问题，在“消费者”的主动配合下，根据研究者提供的最佳证据及管理者制定的实践指南和标准等所进行的实践。具体说来循证实践是一个涉及研究者、实践者、实践对象与有关管理者四个方面的理论体系（具体教学方法可以通过中英职教卓越中心北京总部咨询英国NPTC教育专家）。</p>
+                    </div>
+                </div>
+                <div class="block">
+                    <div class="block-title">
+                        <p>微格教学法</p>
+                    </div>
+                    <div class="block-text">
+                        <p>微格教学法又称微型教学，它以现代教育理论为基础，利用先进的媒体信息技术，依据反馈原理和教学评价理论，分阶段系统培训教师教学技能的活动。</p>
+                        <p>微格教学法实际上是提供一个练习环境，使日常复杂的课堂教学得以精简，并能使联系者获得大量的反馈意见，微格教学实践一般控制在5-10分钟，在这几分钟内要求教师或者师范生将平时40分课堂内容能在这几分钟内完整呈现并且使得学生听懂、理解（具体教学方法可以通过中英职教卓越中心北京总部咨询英国NPTC教育专家）。</p>
+                    </div>
+                </div>
+            </div>
+            <page-bottom></page-bottom>
+        </div>
+        
+    </div>
+    <script src="../js/vue.min.js"></script>
+    <script src="../js/cube.min.js"></script>
+    <script src="../js/public.js"></script>
+    <script src="../js/video.js"></script>
+    <script>
+        new Vue({
+            el:"#app"
+        })
+    </script>
+</body>
+
+</html>

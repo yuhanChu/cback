@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Cebvec</title>
+    <script>
+    (function() {
+        var width = document.documentElement.clientWidth;
+        if (width > 414) {
+            width = 414
+        }
+        document.documentElement.style.fontSize = width / 7.5 + "px";
+        window.onresize = function() {
+            var width = document.documentElement.clientWidth;
+            if (width > 414) {
+                width = 414
+            }
+            document.documentElement.style.fontSize = width / 7.5 + "px";
+        }
+    })();
+    </script>
+    <link rel="stylesheet" href="../css/cube.min.css">
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../css/expert.css">
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <my-header>教育专家</my-header>
+        <div class="my-main">
+            <div class="main">
+                <div class="block block1">
+                    <p class="block-title"><span>教师培训项目负责人</span></p>
+                    <ul class="teacher-list">
+                        <li v-for="it in teacher1" @click="showTeacher(it)">
+                            <img :src="it.photo">
+                            <p v-text="it.name_cn"></p>
+                            <p v-text="it.name_en"></p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="block">
+                    <p class="block-title"><span>教师培训项目负责人</span></p>
+                    <ul class="teacher-list">
+                        <li v-for="it in teacher2" @click="showTeacher(it)">
+                            <img :src="it.photo">
+                            <p v-text="it.name_cn"></p>
+                            <p v-text="it.name_en"></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <page-bottom></page-bottom>
+        </div>
+        <div class="pop-teacher">
+            <transition name="fade">
+                <div class="mask" v-show="showDetail"></div>
+            </transition>
+            <transition name="bounce" @after-enter="afterEnter">
+                <div class="pop-box" v-show="showDetail">
+                    <cube-scroll ref="scroll">
+                        <div class="img">
+                            <img :src="teacher.photo">
+                        </div>
+                        <p class="name"><span v-text="teacher.name_cn"></span><span v-text="teacher.name_en"></span></p>
+                        <p class="remark" v-text="teacher.remark"></p>
+                        <div class="introduce" v-html="teacher.introduce"></div>
+                    </cube-scroll>
+                    <div class="close-btn" @click="showDetail=false">关闭</div>
+                </div>
+            </transition>
+        </div>
+    </div>
+    <script src="../js/vue.min.js"></script>
+    <script src="../js/cube.min.js"></script>
+    <script src="../js/public.js"></script>
+    <script src="../js/expert.js"></script>
+</body>
+
+</html>

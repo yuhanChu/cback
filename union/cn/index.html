@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>中英职业教育合作发展联盟（CUKVECDA）</title>
+    <script>
+    (function() {
+        var width = document.documentElement.clientWidth;
+        if (width > 414) {
+            width = 414
+        }
+        document.documentElement.style.fontSize = width / 7.5 + "px";
+        window.onresize = function() {
+            var width = document.documentElement.clientWidth;
+            if (width > 414) {
+                width = 414
+            }
+            document.documentElement.style.fontSize = width / 7.5 + "px";
+        }
+    })();
+    </script>
+    <link rel="stylesheet" href="../tools/cube/cube.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/public.css">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+</head>
+
+<body>
+    <div id="app">
+        <my-head :type="1" :value="title"></my-head>
+        <div class="banner">
+            <cube-slide ref="slide" :data="items" :show-dots="true">
+                <cube-slide-item v-for="(item, index) in items" :key="index">
+                    <a :href="item.url">
+                        <img :src="item.image">
+                        <div class="bg-word">
+                            <p v-text="item.word"></p>
+                        </div>
+                    </a>
+                </cube-slide-item>
+            </cube-slide>
+        </div>
+        <div class="join">
+            <p>中英职业教育合作发展联盟</p>
+            <p>
+                中英两国政府大力发展教育领域合作的背景下，受英国政府 的支持而设立，旨在发挥英国成熟的现代职业教育体系的优 势，助力中国院校与国际职教融合发展。
+            </p>
+            <div class="join-btn">加入联盟</div>
+        </div>
+        <div class="about clearfix">
+            <div class="col">
+                <a href="javascript:;">
+                    <img src="../images/index/about1.jpg">
+                    <span>关于联盟</span>
+                </a>
+            </div>
+            <div class="col">
+                <a href="javascript:;">
+                    <img src="../images/index/about2.jpg">
+                    <span>合作案例</span>
+                </a>
+            </div>
+            <div class="col mr0">
+                <a href="javascript:;">
+                    <img src="../images/index/about3.jpg">
+                    <span>英国职教</span>
+                </a>
+            </div>
+        </div>
+        <div class="information">
+            <div class="title clearfix">
+                <p>信息动态<sub>Information dynamics</sub></p>
+                <a href="javascript:;">更多&gt;&gt;</a>
+            </div>
+            <ul class="list">
+                <li>
+                    <a href="javascript:;">
+                        <div class="img">
+                            <img src="../images/index/infor1.jpg">
+                        </div>
+                        <div class="word">
+                            <p class="tit">中英职教合作发展联盟成立</p>
+                            <p class="time">2018-05-28</p>
+                            <p class="txt">
+                                5月28日，中英职业教育合作发展联盟的北京成立。联盟由四川航天职业技术学院等12家中方机构、密德萨斯大学等9家英方机构发起，获得英国国际贸易部等政府机构支持。
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <div class="img">
+                            <img src="../images/index/infor2.jpg">
+                        </div>
+                        <div class="word">
+                            <p class="tit">上海城建学院被推举为中英职业教育合作发展联盟副主席单位</p>
+                            <p class="time">2018-05-31</p>
+                            <p class="txt">
+                                上海城建学院作为联盟发起单位之一参与了中英职业教育合作发展联盟的筹备工作，在此次大会上被推举为副主席单位，校长叶银忠被推举为联席主席。
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <div class="img">
+                            <img src="../images/index/infor3.jpg">
+                        </div>
+                        <div class="word">
+                            <p class="tit">上海工商职业技术学院与英国尼思港塔尔博特学院签署合作备忘录</p>
+                            <p class="time">2018-07-11</p>
+                            <p class="txt">
+                                上海工商职业技术学院初步达成了与英国名列前茅的职业院校尼思港塔尔博特学院（简称NPTC）建立友好学校，在此基础上，就职业教育理念与方法的师资培训、双语教师培训、社会通用专业联合建设等达成意向。
+                            </p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="nation">
+            <div class="title clearfix">
+                <p>国际合作<sub>nternational co-operation</sub></p>
+                <a href="javascript:;">更多&gt;&gt;</a>
+            </div>
+            <ul class="list">
+                <li>
+                    <a href="javascript:;">
+                        <div class="img">
+                            <img src="../images/index/infor1.jpg">
+                        </div>
+                        <div class="word">
+                            <p class="tit">中英职教合作发展联盟成立</p>
+                            <p class="time">2018-05-28</p>
+                            <p class="txt">
+                                5月28日，中英职业教育合作发展联盟的北京成立。联盟由四川航天职业技术学院等12家中方机构、密德萨斯大学等9家英方机构发起，获得英国国际贸易部等政府机构支持。
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <div class="img">
+                            <img src="../images/index/infor2.jpg">
+                        </div>
+                        <div class="word">
+                            <p class="tit">上海城建学院被推举为中英职业教育合作发展联盟副主席单位</p>
+                            <p class="time">2018-05-31</p>
+                            <p class="txt">
+                                上海城建学院作为联盟发起单位之一参与了中英职业教育合作发展联盟的筹备工作，在此次大会上被推举为副主席单位，校长叶银忠被推举为联席主席。
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <div class="img">
+                            <img src="../images/index/infor3.jpg">
+                        </div>
+                        <div class="word">
+                            <p class="tit">上海工商职业技术学院与英国尼思港塔尔博特学院签署合作备忘录</p>
+                            <p class="time">2018-07-11</p>
+                            <p class="txt">
+                                上海工商职业技术学院初步达成了与英国名列前茅的职业院校尼思港塔尔博特学院（简称NPTC）建立友好学校，在此基础上，就职业教育理念与方法的师资培训、双语教师培训、社会通用专业联合建设等达成意向。
+                            </p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="service">
+            <div class="title clearfix">
+                <p>联盟服务<sub>Alliance Service</sub></p>
+                <a href="javascript:;">更多&gt;&gt;</a>
+            </div>
+            <ul class="list">
+                <li>
+                    <a href="javascript:;">
+                        <div class="img">
+                            <img src="../images/index/infor1.jpg">
+                        </div>
+                        <div class="word">
+                            <p class="tit">中英职教合作发展联盟成立</p>
+                            <p class="time">2018-05-28</p>
+                            <p class="txt">
+                                5月28日，中英职业教育合作发展联盟的北京成立。联盟由四川航天职业技术学院等12家中方机构、密德萨斯大学等9家英方机构发起，获得英国国际贸易部等政府机构支持。
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <div class="img">
+                            <img src="../images/index/infor2.jpg">
+                        </div>
+                        <div class="word">
+                            <p class="tit">上海城建学院被推举为中英职业教育合作发展联盟副主席单位</p>
+                            <p class="time">2018-05-31</p>
+                            <p class="txt">
+                                上海城建学院作为联盟发起单位之一参与了中英职业教育合作发展联盟的筹备工作，在此次大会上被推举为副主席单位，校长叶银忠被推举为联席主席。
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <div class="img">
+                            <img src="../images/index/infor3.jpg">
+                        </div>
+                        <div class="word">
+                            <p class="tit">上海工商职业技术学院与英国尼思港塔尔博特学院签署合作备忘录</p>
+                            <p class="time">2018-07-11</p>
+                            <p class="txt">
+                                上海工商职业技术学院初步达成了与英国名列前茅的职业院校尼思港塔尔博特学院（简称NPTC）建立友好学校，在此基础上，就职业教育理念与方法的师资培训、双语教师培训、社会通用专业联合建设等达成意向。
+                            </p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="support">
+            <div class="title">支持单位<sub>Support unit</sub></div>
+            <ul>
+                <li>
+                    <a href="javascript:;">
+                        <img src="../images/index/support1.png">
+                    <span>英国文化教育协会</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <img src="../images/index/support2.png">
+                    <span>英中贸易协会</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <img src="../images/index/support2.png">
+                    <span>威尔士政府</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <img src="../images/index/support4.png">
+                    <span>英国政府</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <img src="../images/index/support5.png">
+                    <span>NPTC学院</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <img src="../images/index/support6.png">
+                    <span>中国职业教育对外合作联盟</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="link">
+            <img src="../images/index/link-logo.png">
+            <span>友情链接</span>
+            <ul>
+                <li><a href="javascript:;">中国教育部</a></li>
+                <li><a href="javascript:;">黑龙江建筑职业技术学院</a></li>
+                <li><a href="javascript:;">英国教育部</a></li>
+                <li><a href="javascript:;">四川航天职业技术学院</a></li>
+                <li><a href="javascript:;">尼思港塔尔博特学院</a></li>
+                <li><a href="javascript:;">四川信息职业技术学院</a></li>
+                <li><a href="javascript:;">密德萨斯大学</a></li>
+                <li><a href="javascript:;">北京市工业技师学院</a></li>
+                <li><a href="javascript:;">林肯学院</a></li>
+                <li><a href="javascript:;">常州艺术高等职业学校</a></li>
+                <li><a href="javascript:;">波士顿学院（林肯郡）</a></li>
+                <li><a href="javascript:;">全国职业教育对外合作与交流网</a></li>
+                <li><a href="javascript:;">奇切斯特学院</a></li>
+                <li><a href="javascript:;">全景职教学</a></li>
+                <li><a href="javascript:;">格拉斯哥城市学院</a></li>
+                <li><a href="javascript:;">北京中育教育与产业发展研究中心</a></li>
+                <li><a href="javascript:;">费勒姆学院</a></li>
+                <li><a href="javascript:;">学分在线（北京）国际数据科技有限公司</a></li>
+                <li><a href="javascript:;">欧克斯桥学院 </a></li>
+                <li><a href="javascript:;">深圳市三通特发科技有限公司</a></li>
+                <li><a href="javascript:;">纽卡斯尔学院 </a></li>
+                <li><a href="javascript:;" class="more">更多友情链接 </a></li>
+            </ul>
+        </div>
+        <my-foot></my-foot>
+    </div>
+</body>
+<script src="../tools/vue.min.js"></script>
+<script src="../tools/cube/cube.min.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>
+<script>
+new Vue({
+    el: "#app",
+    data: {
+        title: '',
+        items: [{
+                url: 'javascript:;',
+                image: '../images/index/Banner1.jpg',
+                word: '中英职业教育合作发展联盟（CUKVECDA）于2018年5月28日在北京梅地亚中心成立'
+            },
+            {
+                url: 'javascript:;',
+                image: '../images/index/Banner2.jpg',
+                word: '英国尼斯港塔尔博特学院（NPTC）与上海城建学院（SUCC）签署合作协议'
+            },
+            {
+                url: 'javascript:;',
+                image: '../images/index/Banner3.jpg',
+                word: '英国政府力推T-level'
+            },
+            {
+                url: 'javascript:;',
+                image: '../images/index/Banner4.jpg',
+                word: '会员招募，加入我们'
+            },
+        ],
+        dotIndex: 0,
+    },
+    methods: {}
+})
+</script>
+
+</html>

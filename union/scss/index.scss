@@ -1,0 +1,270 @@
+@import './init.scss';
+body {
+    background: #f4f4f4;
+}
+
+.banner {
+    height: 4.1rem;
+    width: 100%;
+    position: relative;
+    .cube-slide-item {
+        position: relative;
+        .bg-word {
+            height: 1.4rem;
+            width: 100%;
+            background: rgba(0, 0, 0, .4);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: .19rem .32rem 0;
+            line-height: .52rem;
+            p {
+                @include font(.26rem, #ffffff);
+                word-break: break-all;
+                white-space: normal;
+            }
+        }
+    }
+    .cube-slide-dots {
+        bottom: 0.31rem;
+        right: 0;
+        text-align: right;
+        padding-right: .32rem;
+        &>span {
+            margin: 0 .02rem;
+            width: .1rem;
+            height: .1rem;
+            background: #888;
+            border-radius: 0.02rem;
+            &.active {
+                background: #fff;
+            }
+        }
+    }
+}
+
+.join {
+    height: 4.5rem;
+    background: url('../images/index/join.png') no-repeat center center/cover;
+    padding-top: .7rem;
+    padding: .7rem .31rem 0;
+    p {
+        @include font(.26rem,
+        #333333);
+        line-height: .52rem;
+        text-align: center;
+    }
+    .join-btn {
+        @include btn(4rem,
+        .7rem,
+        #4469ca);
+        @include font(.32rem,
+        #ffffff);
+        border-radius: .5rem;
+        margin: .5rem auto 0;
+    }
+}
+
+.about {
+    padding: .3rem;
+    .col {
+        margin-right: .3rem;
+        float: left;
+        &.mr0 {
+            margin-right: 0;
+        }
+        a {
+            display: block;
+            width: 2.1rem;
+            img {
+                width: 100%;
+                height: 1.58rem;
+                display: block;
+            }
+            span {
+                display: block;
+                height: .62rem;
+                line-height: .62rem;
+                background: #fff;
+                text-align: center;
+                @include font(.26rem,
+                #666666);
+            }
+        }
+    }
+}
+
+.information {
+    margin-top: .2rem;
+    padding: 0 .3rem;
+    .title {
+        padding-bottom: .2rem;
+        border-bottom: .01rem solid #e9e9e9;
+        &>p {
+            @include font(.36rem,
+            #4469ca);
+            line-height: .36rem;
+            float: left;
+        }
+        sub {
+            color: #999999;
+            font-size: .24rem;
+            margin-left: .2rem;
+        }
+        a {
+            @include font(.24rem,
+            #4469ca);
+            float: right;
+            line-height: .36rem;
+        }
+    }
+    .list {
+        li {
+            a {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+            padding: .15rem;
+            padding-right: .26rem;
+            height: 2.1rem;
+            margin-top: .3rem;
+            background: #fff;
+            .img {
+                float: left;
+                width: 2.8rem;
+                height: 100%;
+                img {
+                    height: 100%;
+                }
+            }
+            .word {
+                float: left;
+                margin-left: .34rem;
+                width: 3.35rem;
+                padding-top: .1rem;
+                .tit {
+                    @include font(.26rem,
+                    #333333);
+                    line-height: .36rem;
+                    overflow: hidden; //超出的文本隐藏
+                    text-overflow: ellipsis; //溢出用省略号显示
+                    white-space: nowrap; //溢出不换行
+                }
+                .time {
+                    @include font(.24rem,
+                    #999999);
+                    line-height: .36rem;
+                }
+                .txt {
+                    @include font(.24rem,
+                    #999999);
+                    line-height: .36rem;
+                    margin-top: .2rem;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box; //作为弹性伸缩盒子模型显示。
+                    -webkit-box-orient: vertical; //设置伸缩盒子的子元素排列方式--从上到下垂直排列
+                    -webkit-line-clamp: 2; //显示的行
+                }
+            }
+        }
+    }
+}
+
+.nation {
+    @extend .information;
+    margin-top: .58rem;
+}
+
+.service {
+    @extend .information;
+    margin-top: .58rem;
+}
+
+.support {
+    background: #fff;
+    padding: .38rem .3rem .45rem;
+    margin-top: .28rem;
+    .title {
+        @include font(.36rem,
+        #4469ca);
+        line-height: .36rem;
+        sub {
+            @include font(.24rem,
+            #999999);
+            margin-left: .2rem;
+        }
+    }
+    ul {
+        margin-top: .18rem;
+        border-top: 1px solid #e9e9e9;
+        @extend .clearfix;
+        li {
+            float: left;
+            margin-top: .3rem;
+            width: 2.1rem;
+            height: 1.2rem;
+            border: .01rem solid #e9e9e9;
+            text-align: center;
+            margin-right: .3rem;
+            &:nth-child(3n+3) {
+                margin-right: 0;
+            }
+            a {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+            img {
+                width: 2.06rem;
+                height: .9rem;
+            }
+            span {
+                @include font(.12rem,
+                #333333);
+                display: block;
+            }
+        }
+    }
+}
+
+.link {
+    background: #f4f4f4;
+    padding: .45rem .3rem .6rem;
+    img {
+        width: 3.43rem;
+        heihgt: 4.9rem;
+        display: block;
+        margin-bottom: .38rem;
+    }
+    &>span {
+        @include font(.3rem,
+        #4469ca);
+        line-height: .3rem;
+        display: block;
+    }
+    ul {
+        @extend .clearfix;
+        margin-top: .45rem;
+        li {
+            float: left;
+            width: 47%;
+            font-size: .24rem;
+            line-height: .56rem;
+            margin-right: 3%;
+
+            a {
+                color: #333333;
+                display: block;
+                overflow: hidden; //超出的文本隐藏
+                text-overflow: ellipsis; //溢出用省略号显示
+                white-space: nowrap; //溢出不换行
+                &.more {
+                	color:#4469ca;
+                	text-decoration: underline;
+                }
+            }
+        }
+    }
+}

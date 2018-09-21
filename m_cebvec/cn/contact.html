@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>联系我们</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script>
+    (function() {
+        var width = document.documentElement.clientWidth;
+        if (width > 414) {
+            width = 414
+        }
+        document.documentElement.style.fontSize = width / 7.5 + "px";
+        window.onresize = function() {
+            var width = document.documentElement.clientWidth;
+            if (width > 414) {
+                width = 414
+            }
+            document.documentElement.style.fontSize = width / 7.5 + "px";
+        }
+    })();
+    </script>
+    <link rel="stylesheet" type="text/css" href="../css/cube.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/public.css">
+    <link rel="stylesheet" type="text/css" href="../css/contact.css">
+</head>
+
+<body>
+    <div id="my-app">
+        <my-header>联系我们</my-header>
+        <div class="my-main">
+            <div id="app">
+                <div class="box">
+                    <div class="tit">中国区办公室 China Office</div>
+                    <div class="infor">
+                        <div class="phone">
+                            <div class="left"><i class="cubeic-phone"></i></div>
+                            <div class="right">
+                                <p>联系电话</p>
+                                <p>董老师：<span>173 0116 6213</span></p>
+                                <p>丁老师：<span>136 9152 5139</span><span>010-56218433</span></p>
+                            </div>
+                        </div>
+                        <div class="email">
+                            <div class="left"><i class="cubeic-email"></i></div>
+                            <div class="right">
+                                <p>邮箱</p>
+                                <p>China-office@cebvec.org</p>
+                            </div>
+                        </div>
+                        <div class="add">
+                            <div class="left"><i class="cubeic-email"></i></div>
+                            <div class="right">
+                                <p>地址</p>
+                                <p>北京市海淀区北三环西路48号北京科技会展中心2号楼19层</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="tit">英国区办公室 UK Office</div>
+                    <div class="infor">
+                        <div class="email mt0">
+                            <div class="left"><i class="cubeic-email"></i></div>
+                            <div class="right">
+                                <p>邮箱</p>
+                                <p>UK-office@cebvec.org</p>
+                            </div>
+                        </div>
+                        <div class="add">
+                            <div class="left"><i class="cubeic-email"></i></div>
+                            <div class="right">
+                                <p>地址</p>
+                                <p>NPTC Group Dwr-y-Felin Road,Neath,Neath Port Talbot SA10 7RF United Kingdom</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <page-bottom></page-bottom>
+    </div>
+</body>
+<script type="text/javascript" src="../js/vue.min.js"></script>
+<script type="text/javascript" src="../js/cube.min.js"></script>
+<script src="../js/public.js"></script>
+<script>
+new Vue({
+    el: "#my-app"
+})
+</script>
+
+</html>

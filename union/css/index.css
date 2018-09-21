@@ -1,0 +1,133 @@
+body, html { font-size: 14px; width: 100%; height: 100%; margin: 0; }
+
+input, textarea { margin-bottom: 0; -webkit-box-shadow: none; box-shadow: none; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+input[disabled], input[readonly], select[disabled], select[readonly], textarea[disabled], textarea[readonly] { background: 0 0; cursor: default; }
+
+p { margin-bottom: 0; margin-top: 0; }
+
+ol, ul { list-style: none; margin-bottom: 0; padding: 0; }
+
+a { text-decoration: none; color: #333; }
+
+a:hover { color: #333; text-decoration: none; }
+
+a:link { text-decoration: none; }
+
+i { font-style: normal; }
+
+.f_left { float: left; }
+
+label { margin-bottom: 0; }
+
+.f_right { float: right; }
+
+.clearfix::after, .support ul::after, .link ul::after { display: block; content: ''; clear: both; height: 0; }
+
+button, input, select, textarea { outline: 0; resize: none; -webkit-box-shadow: none !important; box-shadow: none !important; }
+
+.uneditable-input, input[type=email], input[type=url], input[type=search], input[type=tel], input[type=color], input[type=text], input[type=password], input[type=datetime], input[type=datetime-local], input[type=date], input[type=month], input[type=time], input[type=week], input[type=number], select, textarea { margin-bottom: 0 !important; }
+
+button { border: none !important; background: 0 0 !important; }
+
+body { background: #fff; }
+
+[v-cloak] { display: none; }
+
+#app * { -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+body { background: #f4f4f4; }
+
+.banner { height: 4.1rem; width: 100%; position: relative; }
+
+.banner .cube-slide-item { position: relative; }
+
+.banner .cube-slide-item .bg-word { height: 1.4rem; width: 100%; background: rgba(0, 0, 0, 0.4); position: absolute; bottom: 0; left: 0; padding: .19rem .32rem 0; line-height: .52rem; }
+
+.banner .cube-slide-item .bg-word p { font-size: 0.26rem; color: #ffffff; word-break: break-all; white-space: normal; }
+
+.banner .cube-slide-dots { bottom: 0.31rem; right: 0; text-align: right; padding-right: .32rem; }
+
+.banner .cube-slide-dots > span { margin: 0 .02rem; width: .1rem; height: .1rem; background: #888; border-radius: 0.02rem; }
+
+.banner .cube-slide-dots > span.active { background: #fff; }
+
+.join { height: 4.5rem; background: url("../images/index/join.png") no-repeat center center/cover; padding-top: .7rem; padding: .7rem .31rem 0; }
+
+.join p { font-size: 0.26rem; color: #333333; line-height: .52rem; text-align: center; }
+
+.join .join-btn { width: 4rem; height: 0.7rem; line-height: 0.7rem; text-align: center; background-color: #4469ca; cursor: pointer; font-size: 0.32rem; color: #ffffff; border-radius: .5rem; margin: .5rem auto 0; }
+
+.about { padding: .3rem; }
+
+.about .col { margin-right: .3rem; float: left; }
+
+.about .col.mr0 { margin-right: 0; }
+
+.about .col a { display: block; width: 2.1rem; }
+
+.about .col a img { width: 100%; height: 1.58rem; display: block; }
+
+.about .col a span { display: block; height: .62rem; line-height: .62rem; background: #fff; text-align: center; font-size: 0.26rem; color: #666666; }
+
+.information, .nation, .service { margin-top: .2rem; padding: 0 .3rem; }
+
+.information .title, .nation .title, .service .title { padding-bottom: .2rem; border-bottom: .01rem solid #e9e9e9; }
+
+.information .title > p, .nation .title > p, .service .title > p { font-size: 0.36rem; color: #4469ca; line-height: .36rem; float: left; }
+
+.information .title sub, .nation .title sub, .service .title sub { color: #999999; font-size: .24rem; margin-left: .2rem; }
+
+.information .title a, .nation .title a, .service .title a { font-size: 0.24rem; color: #4469ca; float: right; line-height: .36rem; }
+
+.information .list li, .nation .list li, .service .list li { padding: .15rem; padding-right: .26rem; height: 2.1rem; margin-top: .3rem; background: #fff; }
+
+.information .list li a, .nation .list li a, .service .list li a { display: block; width: 100%; height: 100%; }
+
+.information .list li .img, .nation .list li .img, .service .list li .img { float: left; width: 2.8rem; height: 100%; }
+
+.information .list li .img img, .nation .list li .img img, .service .list li .img img { height: 100%; }
+
+.information .list li .word, .nation .list li .word, .service .list li .word { float: left; margin-left: .34rem; width: 3.35rem; padding-top: .1rem; }
+
+.information .list li .word .tit, .nation .list li .word .tit, .service .list li .word .tit { font-size: 0.26rem; color: #333333; line-height: .36rem; overflow: hidden; -o-text-overflow: ellipsis; text-overflow: ellipsis; white-space: nowrap; }
+
+.information .list li .word .time, .nation .list li .word .time, .service .list li .word .time { font-size: 0.24rem; color: #999999; line-height: .36rem; }
+
+.information .list li .word .txt, .nation .list li .word .txt, .service .list li .word .txt { font-size: 0.24rem; color: #999999; line-height: .36rem; margin-top: .2rem; overflow: hidden; -o-text-overflow: ellipsis; text-overflow: ellipsis; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+
+.nation { margin-top: .58rem; }
+
+.service { margin-top: .58rem; }
+
+.support { background: #fff; padding: .38rem .3rem .45rem; margin-top: .28rem; }
+
+.support .title { font-size: 0.36rem; color: #4469ca; line-height: .36rem; }
+
+.support .title sub { font-size: 0.24rem; color: #999999; margin-left: .2rem; }
+
+.support ul { margin-top: .18rem; border-top: 1px solid #e9e9e9; }
+
+.support ul li { float: left; margin-top: .3rem; width: 2.1rem; height: 1.2rem; border: .01rem solid #e9e9e9; text-align: center; margin-right: .3rem; }
+
+.support ul li:nth-child(3n+3) { margin-right: 0; }
+
+.support ul li a { display: block; width: 100%; height: 100%; }
+
+.support ul li img { width: 2.06rem; height: .9rem; }
+
+.support ul li span { font-size: 0.12rem; color: #333333; display: block; }
+
+.link { background: #f4f4f4; padding: .45rem .3rem .6rem; }
+
+.link img { width: 3.43rem; heihgt: 4.9rem; display: block; margin-bottom: .38rem; }
+
+.link > span { font-size: 0.3rem; color: #4469ca; line-height: .3rem; display: block; }
+
+.link ul { margin-top: .45rem; }
+
+.link ul li { float: left; width: 47%; font-size: .24rem; line-height: .56rem; margin-right: 3%; }
+
+.link ul li a { color: #333333; display: block; overflow: hidden; -o-text-overflow: ellipsis; text-overflow: ellipsis; white-space: nowrap; }
+
+.link ul li a.more { color: #4469ca; text-decoration: underline; }

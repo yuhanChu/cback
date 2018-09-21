@@ -1,0 +1,9 @@
+#app { border-top: .3rem solid #f6f6f6; border-bottom: .3rem solid #f6f6f6; padding: 0 .3rem; }
+
+#app .new { width: 100%; padding-bottom: .3rem; padding-top: .3rem; border-bottom: 1px solid #e9e9e9; line-height: .46rem; }
+
+#app .new:last-child { border-bottom: 0; }
+
+#app .new a { display: block; font-size: .28rem; color: #666666; }
+
+#app .new span { font-size: .24rem; color: #999999; }

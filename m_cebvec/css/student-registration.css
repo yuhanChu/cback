@@ -1,0 +1,35 @@
+#app { background: #f8f8f8; padding-bottom: .5rem; }
+
+#app .info, #app .education, #app .job { background: #fff; }
+
+#app .info .tit, #app .education .tit, #app .job .tit { font-size: .24rem; color: #666666; height: .6rem; line-height: .6rem; background: #f6f6f6; padding-left: .3rem; }
+
+#app .info .import, #app .education .import, #app .job .import { border-bottom: 1px solid #e9e9e9; padding: .0rem .3rem; }
+
+#app .info .import:after, #app .education .import:after, #app .job .import:after { display: block; clear: both; content: ""; }
+
+#app .info .import .left, #app .education .import .left, #app .job .import .left { font-size: .3rem; color: #666666; height: 1rem; line-height: 1rem; float: left; }
+
+#app .info .import .right, #app .education .import .right, #app .job .import .right { float: right; width: 60%; text-align: right; padding: 0.24rem 0; height: 1rem; color: #333; }
+
+#app .info .import .right input, #app .education .import .right input, #app .job .import .right input { width: 100%; font-size: .3rem; height: 100%; text-align: right; border: none; color: #666; outline: 0; }
+
+#app .info .import .right input.w80, #app .education .import .right input.w80, #app .job .import .right input.w80 { width: 80%; }
+
+#app .info .import .right span, #app .education .import .right span, #app .job .import .right span { font-size: .3rem; color: #333; }
+
+#app .info .choose, #app .education .choose, #app .job .choose { border-bottom: 1px solid #e9e9e9; padding: .0rem .3rem; }
+
+#app .info .choose:after, #app .education .choose:after, #app .job .choose:after { display: block; clear: both; content: ""; }
+
+#app .info .choose .left, #app .education .choose .left, #app .job .choose .left { font-size: .3rem; color: #666666; height: 1rem; line-height: 1rem; float: left; }
+
+#app .info .choose .selet, #app .education .choose .selet, #app .job .choose .selet { float: right; }
+
+#app .info .choose .selet .cubeic-arrow, #app .education .choose .selet .cubeic-arrow, #app .job .choose .selet .cubeic-arrow { display: block; height: 1rem; line-height: 1rem; color: #cccccc; font-size: .36rem; }
+
+#app .info .choose .selet .con, #app .education .choose .selet .con, #app .job .choose .selet .con { display: block; height: 1rem; line-height: 1rem; color: #333; font-size: .3rem; }
+
+#app .info .bm0, #app .education .bm0, #app .job .bm0 { border-bottom: 0 !important; }
+
+#app .submit { width: 3.06rem; height: .7rem; line-height: .7rem; text-align: center; line-height: .7rem; background: #e00058; color: #fff; font-size: .3rem; margin: .5rem auto 0; border-radius: .1rem; }

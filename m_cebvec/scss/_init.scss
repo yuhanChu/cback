@@ -1,0 +1,27 @@
+$dw:100;$head-height:40px;$tColor:#e00058;
+
+@mixin shadow{
+	box-shadow:0 0 30px rgba(30,160,210,.3);
+}
+@mixin linear{
+	background:$tColor;
+	background:linear-gradient(to right,$tColor , rgba(0,0,0,0))
+}
+@mixin btn{
+	text-align:center;border-radius:4px;color:#fff;display:inline-block;
+}
+@mixin clear{
+	&:after{display:block;clear:both;content:"";}
+}
+@mixin ellipsis{
+	overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+@mixin blockCenter{
+	display:flex;align-items:center;justify-content:center;text-align:center;
+}
+@mixin fixedCenter{
+	position:fixed;left:50%;top:50%;transform:translate(-50%,-50%)
+}
+@mixin border1{
+	border-top:30/$dw+rem solid #f6f6f6;border-bottom:30/$dw+rem solid #f6f6f6;
+}

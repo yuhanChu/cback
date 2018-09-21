@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>新闻资讯</title>
+    <script>
+    (function() {
+        var width = document.documentElement.clientWidth;
+        if (width > 414) {
+            width = 414
+        }
+        document.documentElement.style.fontSize = width / 7.5 + "px";
+        window.onresize = function() {
+            var width = document.documentElement.clientWidth;
+            if (width > 414) {
+                width = 414
+            }
+            document.documentElement.style.fontSize = width / 7.5 + "px";
+        }
+    })();
+    </script>
+    <link rel="stylesheet" type="text/css" href="../css/cube.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/public.css">
+    <link rel="stylesheet" type="text/css" href="../css/news.css">
+</head>
+
+<body>
+    <div id="my-app">
+        <my-header>新闻资讯</my-header>
+        <div class="my-main">
+            <div id="app">
+                <div class="new" v-for="it in list">
+                    <a :href="it.href" v-text="it.title">上海工商职业技术学院与英国尼斯港塔尔伯特学院签署合作备忘录</a>
+                    <span v-text="it.time">2018-07-11</span>
+                </div>
+            </div>
+        </div>
+        <page-bottom></page-bottom>
+    </div>
+</body>
+<script type="text/javascript" src="../js/vue.min.js"></script>
+<script type="text/javascript" src="../js/cube.min.js"></script>
+<script src="../js/public.js"></script>
+<script type="text/javascript" src="../js/cLang.js"></script>
+<script type="text/javascript">
+var path = location.pathname.match(/\/\w+/g)[0];
+new Vue({
+    el: '#my-app',
+    data: {
+        list: [
+            { time: '2018-07-11', href: 'http://www.sicp.sh.cn/index.php/cms/item-view-id-3143.shtml', title: text.new1 },
+            { time: '2018-07-10', href: 'http://www.succ.edu.cn/Home/News/view/xwid/2cb38aee8c8c7b631b217a8e09f99251', title: text.new2 },
+            { time: '2018-06-15', href: 'http://xiantlzyrussian.fanya.chaoxing.com/portal/news/info?id=13483', title: text.new3 },
+            { time: '2018-05-31', href: 'http://www.succ.edu.cn/wmw/Home/News/view/xwid/f2d7f848e29918c7e428e7e4b2fc598b', title: text.new4 },
+            { time: '2018-05-29', href: 'http://news.hict.org.cn/Html/xiaonaxinwen/2018/0529/11017.html', title: text.new5 },
+            { time: '2018-05-28', href:'new1.html', title: text.new6 },
+            // { time: '2018-05-28', href: path + '/news2.html', title: text.new7 },
+        ]
+    }
+})
+</script>
+
+</html>

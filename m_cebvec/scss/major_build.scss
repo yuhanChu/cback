@@ -1,0 +1,32 @@
+@import "_init.scss";
+.main-nav{
+	width:100%;height:80/$dw+rem;line-height:80/$dw+rem;
+	li{float:left;width:33.33%;text-align:center;
+		.tab{display:inline-block;height:80/$dw+rem;font-size:26/$dw+rem;color:#666;position:relative;}
+	}
+	.act{
+		span:after{content:"";position:absolute;left:0;bottom:0;width:100%;background:$tColor;height:2px;border-radius:2px;}
+	}
+
+}
+@mixin text1{
+	color:#666;font-size:26/$dw+rem;line-height:2em;
+}
+.main{@include border1;}
+.zhengshu{
+	padding:30/$dw+rem;
+	p{@include text1;}
+	.img{width:546/$dw+rem;margin:50/$dw+rem auto;
+		img{width:100%;display:block;}
+	}
+}
+.buzhou{
+	padding:30/$dw+rem;
+	li{margin-bottom:60/$dw+rem;}
+	p{@include text1;text-indent:2em;}
+	p:first-child{text-indent:0;}
+	.img{margin-top:20/$dw+rem;img{display:block;width:100%;}}
+}
+.liucheng{
+	img{display:block;width:100%;}
+}

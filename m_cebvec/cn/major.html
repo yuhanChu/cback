@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Cebvec</title>
+    <script>
+    (function() {
+        var width = document.documentElement.clientWidth;
+        if (width > 414) {
+            width = 414
+        }
+        document.documentElement.style.fontSize = width / 7.5 + "px";
+        window.onresize = function() {
+            var width = document.documentElement.clientWidth;
+            if (width > 414) {
+                width = 414
+            }
+            document.documentElement.style.fontSize = width / 7.5 + "px";
+        }
+    })();
+    </script>
+    <link rel="stylesheet" href="../css/cube.min.css">
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../css/major.css">
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <my-header>中英专业</my-header>
+        <div class="my-main">
+            <div class="main">
+                <div class="main-left">
+                    <cube-scroll ref="scroll-left">
+                        <ul>
+                            <li v-for="(it,index) in majorList" v-text="(index+1)+' '+it.val" :class="{active:index==majorIndex}" @click="majorIndex=index"></li>
+                        </ul>
+                    </cube-scroll>
+                </div>
+                <div class="main-right">
+                    <cube-scroll ref="scroll-right">
+                        <div class="main-right-box">
+                            <ul>
+                                <li v-for="it in nowMajor" v-text="it.name"></li>
+                            </ul>
+                            <div class="more">
+                                <a href="javascrit:void(0)">了解更多专业</a>
+                            </div>
+                        </div>
+                    </cube-scroll>
+                </div>
+            </div>
+            <page-bottom></page-bottom>
+        </div>
+    </div>
+    <script src="../js/vue.min.js"></script>
+    <script src="../js/cube.min.js"></script>
+    <script src="../js/public.js"></script>
+    <script src="../js/major.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Cebvec</title>
+    <script>
+    (function() {
+        var width = document.documentElement.clientWidth;
+        if (width > 414) {
+            width = 414
+        }
+        document.documentElement.style.fontSize = width / 7.5 + "px";
+        window.onresize = function() {
+            var width = document.documentElement.clientWidth;
+            if (width > 414) {
+                width = 414
+            }
+            document.documentElement.style.fontSize = width / 7.5 + "px";
+        }
+    })();
+    </script>
+    <link rel="stylesheet" href="../css/cube.min.css">
+    <link rel="stylesheet" href="../css/public.css">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <div id="index-header">
+            <div class="logo">
+                <img src="../images/index/img1.png" alt="">
+            </div>
+            <div class="operation">
+                <a href="javascript:void(0)" @click="showRegister=true"><img src="../images/index/icon1.png"></a>
+                <a href="javascript:void(0)" @click="showAside=true"><img src="../images/index/icon2.png"></a>
+            </div>
+        </div>
+        <div class="banner">
+            <cube-slide ref="slide">
+                <cube-slide-item v-for="it in 'aaaa'">
+                    <a href="javascript:void(0)" class="banner-item" style="background-image:url('../images/index/img2.png')">
+                		<span>英国尼斯港塔尔波特学院及中英职业教育卓越中英国尼斯港塔尔波特学院及中英职业教育卓越中</span>
+                	</a>
+                </cube-slide-item>
+            </cube-slide>
+        </div>
+        <div class="index-nav">
+            <div class="index-nav-item">
+                <a href="javascript:void(0)" class="img">
+                   	<img src="../images/index/img3.png" alt="">
+                </a>
+                <a href="javascript:void(0)" class="t">国际专业</a>
+            </div>
+            <div class="index-nav-item">
+                <a href="javascript:void(0)" class="img">
+                    <img src="../images/index/img4.png" alt="">
+                </a>
+                <a href="javascript:void(0)" class="t">国际教师</a>
+            </div>
+            <div class="index-nav-item">
+                <a href="javascript:void(0)" class="img">
+                    <img src="../images/index/img5.png" alt="">
+                </a>
+                <a href="javascript:void(0)" class="t">专业共建</a>
+            </div>
+            <div class="index-nav-item">
+                <a href="javascript:void(0)" class="img">
+                    <img src="../images/index/img6.png" alt="">  
+                </a>
+                <a href="javascript:void(0)" class="t">关于我们</a>
+            </div>
+        </div>
+        <div class="index-apply">
+            <p>教育需要和时代接轨，不断进取、挑战、提升。CEBVEC能引领你了解多样的全球文化，帮助你获得解决问题所需的专业知识和实践技能，带你走向世界。</p>
+            <div class="apply-btn" @click="showApply=true">申请</div>
+        </div>
+        <div class="introduce">
+            <p class="text">中国区英国职业教育卓越中心（Centre of Excellence for British Vocational Education in China，简称CEBVEC）基于中英两国在教育领域长久以来的深度合作，以及中国政府大力发展职业教育的背景，受英国政府支持而成立，总部建在英国，在北京设立了中国区办公室，负责在中国所有的项目交流与合作事宜。CEBVEC依托于英国规模最大的职业教育学院--尼思港塔尔博特学院（简称NPTC），与中国高等职业学院开展国际教育合作，通过引进英国先进的国际教育标准和优势专业，帮助中国职业院校教育标准与国际接轨，培养国际化专业人才。</p>
+            <div class="video-introduce" @click="play">
+                <p><i></i><span>CEBEVEC视频介绍</span></p>
+                <p><span>去看视频</span><i class="cubeic-arrow"></i></p>
+            </div>
+        </div>
+        <div class="case">
+            <div class="case-show">
+                <img src="../images/index/img7.png">
+            </div>
+            <p class="case-title">合作案例：上海城建职业学院-中英职业教育卓远学院</p>
+            <div class="line"></div>
+            <div class="case-text" :class="{showAll:showAll}">
+                <p>中英职业卓远学院由上海城建职业学院与CEBVEC英国成员院校——尼斯港塔尔波特学院（NPTC）共同建立。目前学院规划有建筑工程技术专业、工程造价专业、建筑设计专业、计算机应用技术等四个专业。</p>
+                <p>中英职业卓远学院的建设遵循欧盟标准，以英国国际职业教育标准为指导，并打造国际师资团队。学院教师持英国</p>
+                <p>中英职业卓远学院的建设遵循欧盟标准，以英国国际职业教育标准为指导，并打造国际师资团队。学院教师持英国</p>
+            </div>
+            <div class="case-btn" @click="showAll=!showAll">
+            	<img src="../images/index/icon4.png" :class="{showAll:showAll}">
+            	<span v-show="!showAll">点击展开</span>
+            	<span v-show="showAll">点击收起</span>
+            </div>
+        </div>
+        <div class="index-footer">
+            <cube-tab-bar v-model="footerShow" show-slider>
+                <cube-tab :label="1"><span class="tab">支持单位</span></cube-tab>
+                <cube-tab :label="2"><span class="tab">中国合作院校</span></cube-tab>
+                <cube-tab :label="3"><span class="tab">英国合作院校</span></cube-tab>
+            </cube-tab-bar>
+            <cube-tab-panels v-model="footerShow">
+                <cube-tab-panel :label="1">
+                    <div class="urls">
+                        <a href="javascript:void(0)">英国文化协会</a>
+                        <a href="javascript:void(0)">英中贸易协会</a>
+                        <a href="javascript:void(0)">威尔士政府</a>
+                        <a href="javascript:void(0)">英国政府</a>
+                        <a href="javascript:void(0)">中英职业教育发展联盟</a>
+                    </div>
+                </cube-tab-panel>
+                <cube-tab-panel :label="2">
+                    <div class="urls">
+                        <a href="javascript:void(0)">英国文化协会</a>
+                        <a href="javascript:void(0)">英中贸易协会</a>
+                        <a href="javascript:void(0)">威尔士政府</a>
+                        <a href="javascript:void(0)">英国政府</a>
+                        <a href="javascript:void(0)">中英职业教育发展联盟</a>
+                    </div>
+                </cube-tab-panel>
+                <cube-tab-panel :label="3">
+                    <div class="urls">
+                        <a href="javascript:void(0)">英国文化协会</a>
+                        <a href="javascript:void(0)">英中贸易协会</a>
+                        <a href="javascript:void(0)">威尔士政府</a>
+                        <a href="javascript:void(0)">英国政府</a>
+                        <a href="javascript:void(0)">中英职业教育发展联盟</a>
+                    </div>
+                </cube-tab-panel>
+            </cube-tab-panels>
+            <page-bottom></page-bottom>
+        </div>
+        <my-aside v-model="showAside"></my-aside>
+        <my-apply v-model="showApply"></my-apply>
+        <my-register v-model="showRegister"></my-register>
+        <video id="video" v-show="false">
+            <source src="../video/CEBVEC.mp4" type='video/mp4'>
+        </video>
+    </div>
+    <script src="../js/vue.min.js"></script>
+    <script src="../js/cube.min.js"></script>
+    <script src="../js/public.js"></script>
+    <script src="../js/index.js"></script>
+</body>
+
+</html>

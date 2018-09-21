@@ -1,0 +1,14 @@
+@import "_init.scss";
+@mixin text1{
+	color:#666666;
+	font-size:26/$dw+rem;line-height:46/$dw+rem;
+}
+.main{
+	@include border1;padding:30/$dw+rem;
+	.top-text{@include text1;}
+	.block{border-radius:4px;box-shadow:0 0 20px rgba(0,0,0,.1);margin:30/$dw+rem 0;overflow:hidden;}
+	.block-title{width:100%;height:100/$dw+rem;line-height:100/$dw+rem;background:url(../images/ntpc/img1.png) no-repeat center/cover;text-align:center;color:#fff;font-size:26/$dw+rem;}
+	.block-text{padding:0 40/$dw+rem;@include text1;
+		p{margin:40/$dw+rem 0;}
+	}
+}
