@@ -73,6 +73,7 @@ var app = new Vue({
             achievement: ''
         },
         cardType: false,
+        path: location.pathname.match(/\/\w+/g)[0],
     },
     methods: {
         checkIdCard: function(id) {
@@ -141,6 +142,7 @@ var app = new Vue({
             this.json.gender = res;
         },
         nationCh: function(res) {
+            console.log(res)
             this.json.country = res;
         },
         cardCh: function(res) {
@@ -277,11 +279,11 @@ var app = new Vue({
             this.$http.post(api, this.json).then(function(res) {
                 if (res.body.code == 1) {
                     promit.msg('app', text.regisration59);
-                    setTimeout(function() { window.location.href = "/cn/" }, 2500)
+                    setTimeout(function() { window.location.href = this.path+'/' }, 2500)
                 } else {
                     promit.msg('app', res.body.data || res.body.message);
                 }
-            });
+            }.bind(this));
         },
     },
     created: function() {
